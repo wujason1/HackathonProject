@@ -32,10 +32,16 @@ const Registration = () => {
       <h2>Sign Up</h2>
       <form onSubmit={handleSubmit}>
         <div>
-          <input type="email" name="email" placeholder="Set Email"  value={formData.email} onChange={handleChange} />
+          <input type="text" name="firstName" placeholder="First Name"  value={formData.firstName} onChange={handleChange} />
         </div>
         <div>
-          <input type="password" name="password" placeholder="Set Password" value={formData.password} onChange={handleChange} />
+          <input type="text" name="lastName" placeholder="Last Named" value={formData.LastName} onChange={handleChange} />
+        </div>
+        <div>
+          <input type="email" name="email" placeholder="Email"  value={formData.email} onChange={handleChange} />
+        </div>
+        <div>
+          <input type="password" name="password" placeholder="Password" value={formData.password} onChange={handleChange} />
         </div>
         <button type="submit">Register</button>
       </form>

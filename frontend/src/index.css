@@ -49,7 +49,7 @@ body {
     background-color: #C58A35;
 }
 
-input[type=email], input[type=password] {
+input[type=text], input[type=email], input[type=password] {
     width: 100%;
     padding: 12px 20px;
     margin: 8px 0;
@@ -59,7 +59,7 @@ input[type=email], input[type=password] {
     background-color: #E5DCCB;
 }
 
-input[type=email]::placeholder, input[type=password]::placeholder {
+input[type=text]::placeholder, input[type=email]::placeholder, input[type=password]::placeholder {
     text-align: center;
 }
 
