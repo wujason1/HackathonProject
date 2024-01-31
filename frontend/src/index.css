@@ -1,0 +1,69 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #492309;
+  text-align: center;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.companyName {
+    margin: 1.5rem 0;
+    padding: 3rem 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-size: 150px;
+    color: #E5DCCB;
+}
+
+.missionStatement {
+    margin: 1.5rem 25rem;
+    padding: 18rem 0;
+    border-radius: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #E5DCCB;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("images/gameDrawing.jpg");
+    background-color: #A4410E;
+    background-position: 25%;
+}
+
+.loginDiv {
+    margin: 0 30%;
+    padding: 2rem 0;
+    border-radius: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #C58A35;
+}
+
+input[type=email], input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    border-radius: 25px;
+    border: none;
+    align-items: center;
+    background-color: #E5DCCB;
+}
+
+input[type=email]::placeholder, input[type=password]::placeholder {
+    text-align: center;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
