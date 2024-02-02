@@ -27,11 +27,9 @@ const Registration = () => {
 
   return (
   <div>
-    <div class="companyName">
-        <h1>Work In Progress</h1>
-    </div>
     <div class="loginDiv">
-      <h2>Sign Up</h2>
+        <h1>Work In Progress</h1>
+        <h2>Sign Up</h2>
       <form onSubmit={handleSubmit}>
         <div>
           <input type="text" name="firstName" placeholder="First Name"  value={formData.firstName} onChange={handleChange} />
@@ -40,7 +38,7 @@ const Registration = () => {
           <input type="text" name="lastName" placeholder="Last Name" value={formData.LastName} onChange={handleChange} />
         </div>
         <div>
-          <input type="email" name="email" placeholder="Email"  value={formData.email} onChange={handleChange} />
+          <input type="email" name="email" placeholder="Email" value={formData.email} onChange={handleChange} />
         </div>
         <div>
           <input type="password" name="password" placeholder="Password" value={formData.password} onChange={handleChange} />

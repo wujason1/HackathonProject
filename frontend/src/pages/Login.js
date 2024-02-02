@@ -21,11 +21,10 @@ const Login = () => {
 
   return (
   <div>
-    <div class="missionStatement">
-        <h1>Work In Progress</h1>
-        <h1> Gamify Your Job Application Process! </h1>
-    </div>
     <div class="loginDiv">
+        <h1>Work In Progress</h1>
+        <h1> Gamify Your Job Application Process!</h1>
+        <hr />
         <form onSubmit={handleSubmit}>
             <input type="email" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} />
             <input type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} />
