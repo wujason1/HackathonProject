@@ -5,6 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-image: url("images/gameDrawingnobg.png");
   background-color: #492309;
   text-align: center;
 }
@@ -33,7 +34,6 @@ body {
     justify-content: center;
     align-items: center;
     color: #E5DCCB;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("images/gameDrawing.jpg");
     background-color: #A4410E;
     background-position: 25%;
 }

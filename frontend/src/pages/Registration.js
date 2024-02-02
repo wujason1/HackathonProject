@@ -3,6 +3,8 @@ import axios from 'axios';
 
 const Registration = () => {
   const [formData, setFormData] = useState({
+    firstName: '',
+    lastName: '',
     email: '',
     password: ''
   });
@@ -14,7 +16,7 @@ const Registration = () => {
   const handleSubmit = async e => {
     e.preventDefault();
     try {
-      await axios.post('/registration', formData); // Assuming your backend is running on the same host
+      await axios.post('http://localhost:8080/registration', formData);
       console.log('User registered successfully!');
       // Redirect or show a success message
     } catch (error) {
@@ -35,7 +37,7 @@ const Registration = () => {
           <input type="text" name="firstName" placeholder="First Name"  value={formData.firstName} onChange={handleChange} />
         </div>
         <div>
-          <input type="text" name="lastName" placeholder="Last Named" value={formData.LastName} onChange={handleChange} />
+          <input type="text" name="lastName" placeholder="Last Name" value={formData.LastName} onChange={handleChange} />
         </div>
         <div>
           <input type="email" name="email" placeholder="Email"  value={formData.email} onChange={handleChange} />

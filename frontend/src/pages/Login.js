@@ -10,7 +10,7 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('/login', { email, password });
+      const response = await axios.post('http://localhost:8080/login', { email, password });
       console.log(response.data); // Assuming backend returns user data upon successful login
       // Redirect or set login state based on response
     } catch (error) {
@@ -21,10 +21,8 @@ const Login = () => {
 
   return (
   <div>
-    <div class="companyName">
-        <h1>Work In Progress</h1>
-    </div>
     <div class="missionStatement">
+        <h1>Work In Progress</h1>
         <h1> Gamify Your Job Application Process! </h1>
     </div>
     <div class="loginDiv">
