@@ -1,41 +1,31 @@
-import React, { useState } from 'react';
-import axios from 'axios';
-import { Link } from 'react-router-dom';
+import { useEffect } from 'react';
+import { useHistory } from 'react-router-dom';
+import ReactGA from 'react-ga';
 
-const Login = () => {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+function App() {
+  const history = useHistory();
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    try {
-      const response = await axios.post('/login', { email, password });
-      console.log(response.data); // Assuming backend returns user data upon successful login
-      // Redirect or set login state based on response
-    } catch (error) {
-      console.error('Login failed:', error);
-      // Handle error, show error message to user, etc.
-    }
-  };
+  useEffect(() => {
+    // Initialize Google Analytics
+    ReactGA.initialize('UA-XXXXXXXXX-X'); // Replace with your Tracking ID
+
+    // Track initial page view
+    ReactGA.pageview(window.location.pathname);
+
+    // Track page view on route changes
+    const unlisten = history.listen((location) => {
+      ReactGA.pageview(location.pathname);
+    });
+
+    // Cleanup
+    return () => {
+      unlisten();
+    };
+  }, [history]);
 
   return (
-  <div>
-    <div class="companyName">
-        <h1>Work In Progress</h1>
-    </div>
-    <div class="missionStatement">
-        <h1> Gamify Your Job Application Process! </h1>
-    </div>
-    <div class="loginDiv">
-        <form onSubmit={handleSubmit}>
-            <input type="email" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} />
-            <input type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} />
-            <button type="submit">Login</button>
-        </form>
-    <h4>Don't have an account? </h4>
-    </div>
-  </div>
+    // Your app content
   );
-};
+}
 
-export default Login;
+export default App;
