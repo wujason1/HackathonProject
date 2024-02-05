@@ -1,8 +1,12 @@
 .navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
     background-color: #E5DCCB;
     padding: 18px;
-    margin-bottom: 3rem;
     box-shadow: 2px 2px 8px #2e1606;
+    z-index: 1000;
 }
 
 .nav-menu {
@@ -19,16 +23,11 @@
     margin-right: 20px;
 }
 
-
 .navItem a {
-  text-decoration: none;
-  color: #000;
+    text-decoration: none;
+    color: #000;
 }
 
-.navItem:last-child {
-  margin-left: auto;
-}
+.navItem:last-child { margin-left: auto; }
 
-.navItem a:hover {
-  color: #A4410E;
-}
+.navItem a:hover { color: #A4410E; }

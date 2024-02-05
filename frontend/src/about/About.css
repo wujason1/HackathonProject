@@ -1,0 +1,119 @@
+.two-column-row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.column {
+  width: calc(50% - 20px);
+  margin: 5px;
+  padding: 10px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .column { width: 100%; }
+}
+
+button {
+    display: inline-block;
+    margin: 10px;
+    padding: 10px 20px;
+    background-color: #722D09;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 250px;
+    height: 40px;
+    text-align: center;
+    color: #E5DCCB;
+}
+
+button:hover {
+  background-color: #A4410E;
+}
+
+.buttonAlt {
+    display: inline-block;
+    margin: 10px;
+    padding: 10px 20px;
+    background-color: #E5DCCB !important;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 250px;
+    height: 40px;
+    text-align: center;
+}
+
+.buttonAlt:hover {
+  background-color: #fff;
+}
+
+.banner {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  background-size: cover;
+  background-image: linear-gradient(rgba(73,35,9,0.9), rgba(73,35,9,0.9)), url("../images/boardGameDrawings.png");
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: #E5DCCB;
+  text-align: center;
+  padding: 20px;
+}
+
+.banner h1 {
+  font-size: 48px;
+}
+
+.teamMembers {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 0 10rem;
+}
+
+.teamMember {
+    width: calc(33.33% - 20px); /* Adjusted to 3 per row */
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color: #492309;
+    border-radius: 25px;
+}
+
+.teamMemberPic {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+}
+
+@media (max-width: 768px) {
+  .team-member {
+    width: calc(50% - 20px); /* Adjust for smaller screens */
+  }
+}
+
+.background {
+  padding: 0;
+  background-size: stretch;
+  background-image: linear-gradient(rgba(229,220,203,0.9), rgba(229,220,203,0.6)), url("../images/boardGame.png");
+  background-attachment: fixed;
+  background-position: stretch;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: #E5DCCB;
+  text-align: center;
+  padding-top: 20px;
+}
