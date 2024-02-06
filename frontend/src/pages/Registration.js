@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
+import { Button } from 'react-bootstrap';
 
 const Registration = () => {
   const [formData, setFormData] = useState({
@@ -44,7 +45,7 @@ const Registration = () => {
         <div>
           <input type="password" name="password" placeholder="Password" value={formData.password} onChange={handleChange} />
         </div>
-        <button type="submit">Register</button>
+        <Button type="submit" variant="dark"> Submit </Button>
       </form>
       <h4><Link to="/login">Back to Login</Link></h4>
     </div>

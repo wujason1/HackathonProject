@@ -1,24 +1,29 @@
 import React from 'react';
-import './Navbar.css';
-import { Outlet, Link } from "react-router-dom";
+import { Navbar, Nav } from 'react-bootstrap';
+import { Link, Outlet } from 'react-router-dom';
 import logo from '../images/logo.png';
+import './Navbar.css';
 
-const Navbar = () => {
+const MyNavbar = () => {
   return (
     <>
-    <nav className="navbar">
-      <ul className="nav-menu">
-        <li className="navItem">
-          <a href="/"><img src={logo} alt="logo"   width="20" height="20"></img>Work In Progress</a>
-        </li>
-        <li className="navItem">
-          <Link to="/login">&#9814; Log In</Link>
-        </li>
-      </ul>
-    </nav>
-    <Outlet />
+      <Navbar className="navbar fixed-top customNavBar" expand="lg">
+        <Navbar.Brand href="/">
+          <img src={logo} width="30" height="30" className="d-inline-block align-top" alt="Logo" />
+          {' Work In Progress'}
+        </Navbar.Brand>
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Collapse id="basic-navbar-nav">
+          <Nav className="ml-auto">
+            <Nav.Link as={Link} to="/login" className="customHover">&#9814; Log In</Nav.Link>
+          </Nav>
+        </Navbar.Collapse>
+      </Navbar>
+      <div className="mt-5">
+        <Outlet />
+      </div>
     </>
   );
 }
 
-export default Navbar;
+export default MyNavbar;

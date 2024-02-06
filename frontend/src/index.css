@@ -17,6 +17,7 @@ body {
   background-size: auto;
   background-color: #492309;
   text-align: center;
+  padding-top: 70px;
 }
 
 * {
@@ -79,4 +80,38 @@ input[type=text]::placeholder, input[type=email]::placeholder, input[type=passwo
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.btn-dark {
+    background-color: #492309;
+    border-color: #492309;
+    color: #E5DCCB;
+    display: inline-block;
+    margin: 10px;
+    padding: 0 20px;
+    width: 250px;
+    height: 40px;
+    line-height: 40px;
+}
+
+.btn-light {
+    background-color: #A4410E;
+    border-color: #A4410E;
+    color: #E5DCCB;
+    display: inline-block;
+    margin: 10px;
+    padding: 0 20px;
+    width: 250px;
+    height: 40px;
+    line-height: 40px;
+}
+
+.btn-dark:hover {
+  background-color: #C58A35;
+  border-color: #C58A35;
+}
+
+.btn-light:hover {
+  background-color: #C58A35;
+  border-color: #C58A35;
 }

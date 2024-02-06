@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
+import { Button } from 'react-bootstrap';
 import '../index.css';
 
 const Login = () => {
@@ -28,7 +29,7 @@ const Login = () => {
         <form onSubmit={handleSubmit}>
             <input type="email" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} />
             <input type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} />
-            <button type="submit">Login</button>
+            <Button type="submit" variant="dark"> Login </Button>
         </form>
     <h4>Don't have an account? <Link to="/registration">Create one!</Link></h4>
     </div>
