@@ -21,14 +21,6 @@ public class UserRegistrationController {
 		return "registration.html";
 	}
 
-
-//	@PostMapping("/registration")
-//	@CrossOrigin(origins = "http://localhost:3000")
-//	public String registerUserAccount(@ModelAttribute("User") User user) {
-//		userService.save(user);
-//		return "redirect:/login";
-//	}
-
 	@PostMapping(value = "/registration")
 	public ResponseEntity<Object> registerUserAccount(@RequestBody User user) {
 		System.out.println(user.getId());

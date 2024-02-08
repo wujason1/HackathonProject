@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import axios from 'axios';
 import { Link } from 'react-router-dom';
 import { Button } from 'react-bootstrap';
 import '../index.css';
@@ -19,9 +18,9 @@ const Login = () => {
                 },
             });
           if (response.ok) {
-//            console.log('User logged in successfully!');
-            // Redirect to about page upon successful registration
-            window.location.href = '/';
+            console.log('User logged in successfully!');
+            // Redirect to dashboard upon successful registration
+            window.location.href = '/dashboard';
           } else {
             console.error('Login failed:', response.statusText);
             // add pop up of incorrect login credentials?
@@ -33,7 +32,7 @@ const Login = () => {
 
   return (
   <div>
-    <div class="loginDiv">
+    <div className="loginDiv">
         <h1>Work In Progress</h1>
         <h1> Gamify Your Job Application Process!</h1>
         <hr />
