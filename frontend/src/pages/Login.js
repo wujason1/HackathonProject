@@ -34,10 +34,12 @@ const Login = () => {
         console.log(userLogin)
         // something about data being sent as request body and not request parameters
         try{
-            let response = await fetch('http://localhost:8080/login/' + email + "/" + password, {
+            let response = await fetch('http://localhost:8080/login?email=' + email + "&password=" + password, {
 //            let response = await fetch('http://localhost:8080/login', {
                 method: 'POST',
                 headers: {
+//                'Access-Control-Allow-Origin' : 'http://localhost:3000',
+//                'Access-Control-Allow-Methods' : 'GET, POST, OPTIONS, DELETE, PUT',
                 'Accept' : 'application/json',
                 'Content-Type':'application/json',
                 },
