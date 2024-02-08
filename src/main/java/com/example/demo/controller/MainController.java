@@ -1,5 +1,7 @@
 package com.example.demo.controller;
 
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
@@ -20,21 +22,41 @@ public class MainController {
 	}
 
 
+//	@PostMapping("/login")
+//	@CrossOrigin("http://localhost:3000")
+////	public String registerUserAccount(@RequestParam String email, @RequestParam String password) {
+//	public User registerUserAccount(@RequestParam String email, @RequestParam String password) {
+//		//(@ModelAttribute("User") User user
+//		//String email = user.getEmail();
+//		//String password = user.getPassword();
+//		User expectedUser = userService.findUserByEmailAndPassword(email, password);
+//		if(expectedUser==null) {
+//			//never gets here, if entering wrong credentials, gives 405 in browser and
+//			//Request method 'POST' is not supported in console
+//			return null;
+//		} else {
+//			return expectedUser;
+//		}
+//	}
+
 	@PostMapping("/login")
-	@CrossOrigin(origins = "http://localhost:3000")
-	public String registerUserAccount(@RequestParam String email, @RequestParam String password) {
-		//(@ModelAttribute("User") User user
-		//String email = user.getEmail();
-		//String password = user.getPassword();
+	@CrossOrigin("http://localhost:3000")
+	public void registerUserAccount(HttpServletRequest request, HttpServletResponse response, @RequestParam String email, @RequestParam String password) throws Exception {
+//	public void registerUserAccount(@RequestParam String email, @RequestParam String password) throws Exception {
 		User expectedUser = userService.findUserByEmailAndPassword(email, password);
+		String baseUrl = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort();
+//		String baseUrl = "http://localhost:3000";
 		if(expectedUser==null) {
-			//never gets here, if entering wrong credentials, gives 405 in browser and 
-			//Request method 'POST' is not supported in console
-			return "error.html";
+			String url =  baseUrl + "/loginerror";
+			System.out.println("url: " + url);
+			response.sendRedirect(url);
 		} else {
-			return "redirect:/main";
+			String url =  baseUrl + "/main";
+			System.out.println("url: " + url);
+			response.sendRedirect(url);
 		}
 	}
+
 
 
 	@GetMapping("main")

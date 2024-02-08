@@ -7,18 +7,46 @@ import '../index.css';
 const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    try {
-      const response = await axios.post('http://localhost:8080/login', { email, password });
-      console.log(response.data); // Assuming backend returns user data upon successful login
-      // Redirect or set login state based on response
-    } catch (error) {
-      console.error('Login failed:', error);
-      // Handle error, show error message to user, etc.
-    }
+  const userLogin = {
+      email: email,
+      password: password
   };
+
+//  const handleSubmit = async (e) => {
+//    e.preventDefault();
+//    try {
+//      const response = await axios.post('http://localhost:8080/login', { email, password });
+//      console.log(response.data); // Assuming backend returns user data upon successful login
+//      // Redirect or set login state based on response
+//    } catch (error) {
+//      console.error('Login failed:', error);
+//      // Handle error, show error message to user, etc.
+//    }
+//  };
+
+//    function handleSubmit(e) {
+//        e.preventDefault();
+////        axios.post('http://localhost:8080/login', userLogin);
+//    }
+
+    const handleSubmit = async(e) => {
+        e.preventDefault();
+        console.log(userLogin)
+        // something about data being sent as request body and not request parameters
+        try{
+            let response = await fetch('http://localhost:8080/login/' + email + "/" + password, {
+//            let response = await fetch('http://localhost:8080/login', {
+                method: 'POST',
+                headers: {
+                'Accept' : 'application/json',
+                'Content-Type':'application/json',
+                },
+//                body: JSON.stringify(userLogin),
+            });
+            const responseJson = await response.json();
+            console.log(responseJson);
+        } catch (e) {}
+    }
 
   return (
   <div>

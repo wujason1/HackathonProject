@@ -29,7 +29,7 @@ const Registration = () => {
 
     const handleSubmit = async(e) => {
         e.preventDefault();
-        console.log(formData)
+//        console.log(formData)
         let response = await fetch('http://localhost:8080/registration', {
             method: 'POST',
             headers: {'Content-Type':'application/json'},
