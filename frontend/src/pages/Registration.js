@@ -15,17 +15,29 @@ const Registration = () => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = async e => {
-    e.preventDefault();
-    try {
-      await axios.post('http://localhost:8080/registration', formData);
-      console.log('User registered successfully!');
-      // Redirect or show a success message
-    } catch (error) {
-      console.error('Registration failed:', error);
-      // Handle error, show error message, etc.
+//  const handleSubmit = async e => {
+//    e.preventDefault();
+//    try {
+//      await axios.post('http://localhost:8080/registration', formData);
+//      console.log('User registered successfully!');
+//      // Redirect or show a success message
+//    } catch (error) {
+//      console.error('Registration failed:', error);
+//      // Handle error, show error message, etc.
+//    }
+//  };
+
+    const handleSubmit = async(e) => {
+        e.preventDefault();
+        console.log(formData)
+        let response = await fetch('http://localhost:8080/registration', {
+            method: 'POST',
+            headers: {'Content-Type':'application/json'},
+            body: JSON.stringify(formData),
+        });
+        const responseJson = await response.json();
+        console.log(responseJson);
     }
-  };
 
   return (
   <div>
