@@ -7,47 +7,28 @@ import '../index.css';
 const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const userLogin = {
-      email: email,
-      password: password
-  };
-
-//  const handleSubmit = async (e) => {
-//    e.preventDefault();
-//    try {
-//      const response = await axios.post('http://localhost:8080/login', { email, password });
-//      console.log(response.data); // Assuming backend returns user data upon successful login
-//      // Redirect or set login state based on response
-//    } catch (error) {
-//      console.error('Login failed:', error);
-//      // Handle error, show error message to user, etc.
-//    }
-//  };
-
-//    function handleSubmit(e) {
-//        e.preventDefault();
-////        axios.post('http://localhost:8080/login', userLogin);
-//    }
 
     const handleSubmit = async(e) => {
         e.preventDefault();
-        console.log(userLogin)
-        // something about data being sent as request body and not request parameters
         try{
-            let response = await fetch('http://localhost:8080/login?email=' + email + "&password=" + password, {
-//            let response = await fetch('http://localhost:8080/login', {
+            const response = await fetch('http://localhost:8080/login?email=' + email + "&password=" + password, {
                 method: 'POST',
                 headers: {
-//                'Access-Control-Allow-Origin' : 'http://localhost:3000',
-//                'Access-Control-Allow-Methods' : 'GET, POST, OPTIONS, DELETE, PUT',
                 'Accept' : 'application/json',
                 'Content-Type':'application/json',
                 },
-//                body: JSON.stringify(userLogin),
             });
-            const responseJson = await response.json();
-            console.log(responseJson);
-        } catch (e) {}
+          if (response.ok) {
+//            console.log('User logged in successfully!');
+            // Redirect to about page upon successful registration
+            window.location.href = '/';
+          } else {
+            console.error('Login failed:', response.statusText);
+            // add pop up of incorrect login credentials?
+          }
+        } catch (error) {
+            console.error('Login failed:', error.message);
+        }
     }
 
   return (

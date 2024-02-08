@@ -23,42 +23,36 @@ public class MainController {
 		return "login.html";
 	}
 
-
-//	@PostMapping("/login")
-//	@CrossOrigin("http://localhost:3000")
-////	public String registerUserAccount(@RequestParam String email, @RequestParam String password) {
-//	public User registerUserAccount(@RequestParam String email, @RequestParam String password) {
-//		//(@ModelAttribute("User") User user
-//		//String email = user.getEmail();
-//		//String password = user.getPassword();
-//		User expectedUser = userService.findUserByEmailAndPassword(email, password);
-//		if(expectedUser==null) {
-//			//never gets here, if entering wrong credentials, gives 405 in browser and
-//			//Request method 'POST' is not supported in console
-//			return null;
-//		} else {
-//			return expectedUser;
-//		}
-//	}
-
 	@PostMapping(value = "/login")
 //	@CrossOrigin("http://localhost:3000")
-	public void registerUserAccount(HttpServletRequest request, HttpServletResponse response, @RequestParam String email, @RequestParam String password) throws Exception {
-//	public void registerUserAccount(@RequestParam String email, @RequestParam String password) throws Exception {
+//	public void registerUserAccount(HttpServletRequest request, HttpServletResponse response, @RequestParam String email, @RequestParam String password) throws Exception {
+	public ResponseEntity<Object> registerUserAccount(HttpServletRequest request, HttpServletResponse response, @RequestParam String email, @RequestParam String password) throws Exception {
 		User expectedUser = userService.findUserByEmailAndPassword(email, password);
 		String baseUrl = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort();
-//		String baseUrl = "http://localhost:3000";
 		if(expectedUser==null) {
-			String url =  baseUrl + "/loginerror";
-			System.out.println("url: " + url);
-			response.sendRedirect(url);
+//			String url =  baseUrl + "/loginerror";
+//			System.out.println("url: " + url);
+//			response.sendRedirect(url);
+
+			String json = "{\"error\": \"Incorrect Credentials\"}";
+			return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(json);
 		} else {
-			String url =  baseUrl + "/main";
-			System.out.println("url: " + url);
-			response.sendRedirect(url);
+//			String url =  baseUrl + "/main";
+//			System.out.println("url: " + url);
+//			response.sendRedirect(url);
+
+			String json = "{\"message\": \"main endpoint works\"}";
+			return ResponseEntity.status(HttpStatus.OK).body(json);
 		}
 	}
 
+	@GetMapping("/loginerror")
+	public ResponseEntity<Object> errorPage() {
+
+		String json = "{\"error\": \"Incorrect Credentials\"}";
+
+		return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(json);
+	}
 
 
 	@GetMapping("main")
