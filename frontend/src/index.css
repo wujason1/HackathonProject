@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css2?family=Play&display=swap');
+
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-size: stretch;
+  background-image: linear-gradient(rgba(73,35,9,1), rgba(73,35,9,1), rgba(73,35,9,1), rgba(73,35,9,0.7)), url("images/boardGameDrawings.png");
+  background-size: auto;
+  background-color: #492309;
+  text-align: center;
+  padding-top: 70px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+h1 {
+    font-family: 'Play', sans-serif;
+}
+
+hr {
+    width: 95%;
+    height: 3px;
+    border-width: 0;
+    border-radius: 25px;
+    color: #A4410E;
+    background-color: #E5DCCB;
+}
+
+.missionStatement {
+    margin: 1.5rem 35rem;
+    padding: 10rem 0;
+    border-radius: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #E5DCCB;
+    background-color: #A4410E;
+    background-position: 25%;
+}
+
+.loginDiv {
+    margin: 0 37%;
+    padding: 5rem 2%;
+    border-radius: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: #C58A35;
+    box-shadow: 2px 2px #946726;
+}
+
+input[type=text], input[type=email], input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    border-radius: 25px;
+    border: none;
+    align-items: center;
+    background-color: #E5DCCB;
+}
+
+input[type=text]::placeholder, input[type=email]::placeholder, input[type=password]::placeholder {
+    text-align: center;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.btn-dark {
+    background-color: #492309;
+    border-color: #492309;
+    color: #E5DCCB;
+    display: inline-block;
+    margin: 10px;
+    padding: 0 20px;
+    width: 250px;
+    height: 40px;
+    line-height: 40px;
+}
+
+.btn-light {
+    background-color: #A4410E;
+    border-color: #A4410E;
+    color: #E5DCCB;
+    display: inline-block;
+    margin: 10px;
+    padding: 0 20px;
+    width: 250px;
+    height: 40px;
+    line-height: 40px;
+}
+
+.btn-dark:hover {
+  background-color: #C58A35;
+  border-color: #C58A35;
+}
+
+.btn-light:hover {
+  background-color: #C58A35;
+  border-color: #C58A35;
+}

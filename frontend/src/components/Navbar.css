@@ -1,0 +1,6 @@
+.customNavBar {
+    background-color: #E5DCCB;
+    box-shadow: 2px 2px 8px #2e1606;
+}
+
+.customHover:hover { color: #A4410E; }
