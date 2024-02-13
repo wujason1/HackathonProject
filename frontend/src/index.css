@@ -24,7 +24,7 @@ body {
   box-sizing: border-box;
 }
 
-h1 {
+h1, h2 {
     font-family: 'Play', sans-serif;
 }
 
@@ -35,6 +35,10 @@ hr {
     border-radius: 25px;
     color: #A4410E;
     background-color: #E5DCCB;
+}
+
+.colorWhite {
+    color: #E5DCCB;
 }
 
 .missionStatement {
