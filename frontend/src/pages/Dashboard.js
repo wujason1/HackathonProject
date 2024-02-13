@@ -1,38 +1,51 @@
 import React from 'react';
-import ChallengeBox from '../components/ChallengeBox.js';
-//import SideNav from './components/SideNav.js'
-//import './Challenges.css';
+import ChallengeBox from '../components/ChallengeBox.js'
+import Sidenav from '../components/Sidenav';
+import { FileEarmarkPerson, JournalCode, Award } from 'react-bootstrap-icons';
 
 const Dashboard = () => {
-        return(
-            <div>
-                <h1>Challenges</h1>
-                <div className='challengeDiv'>
-                <ChallengeBox
-                    title={"Update Resume"}
-                    description={"Something about why updating resume is necessary and maybe some resources to help " +
-                                    "user out."}
-                    type={"file"}
-                />
-                </div>
-                <div className='challengeDiv'>
-                <ChallengeBox
-                    title={"Coding Challenge"}
-                    description={"Something about why practicing coding challenges is crucial. Maybe throw up a " +
-                                    "statistic or something."}
-                    type={"url"}
-                />
-                </div>
-                <div className='challengeDiv'>
-                <ChallengeBox
-                    title={"Earn a LinkedIn Certificate"}
-                    description={"Talk about how this time can be used to review previous knowledge or pick up a new " +
-                                    "skill."}
-                    type={"url"}
-                />
-                </div>
+  return (
+    <div className="container-fluid">
+        <div className="row">
+            <div className="col-md-3">
+                <Sidenav />
             </div>
-        );
-}
+
+            <div className="col-md-9">
+                <main role="main" className="px-4">
+                    <div className="colorWhite">
+                        <h1>Challenges</h1>
+
+                    <div className='challengeDiv'>
+                        <ChallengeBox
+                        title={"Update Resume"}
+                        description={"With an updated resume, you'll always be ready to submit your applications or know what to talk about during interviews." }
+                        type={"file"}
+                        icon={FileEarmarkPerson}
+                        />
+                    </div>
+                    <div className='challengeDiv'>
+                        <ChallengeBox
+                        title={"Coding Challenge"}
+                        description={"Most software roles have a coding challenge in the interview process. Practicing with Leetcode helps keep your mind sharp for these interviews"}
+                        type={"url"}
+                        icon={JournalCode}
+                        />
+                    </div>
+                    <div className='challengeDiv'>
+                        <ChallengeBox
+                        title={"Earn a Certificate"}
+                        description={"Review old skills or pick up a new one. Getting a certificate is a great way to show off your desire to learn more."}
+                        type={"url"}
+                        icon={Award}
+                        />
+                    </div>
+                    </div>
+                </main>
+            </div>
+        </div>
+    </div>
+  );
+};
 
 export default Dashboard;

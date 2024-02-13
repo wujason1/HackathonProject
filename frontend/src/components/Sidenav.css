@@ -1,0 +1,42 @@
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 400px;
+    background-color: #5c3c23;
+    box-shadow: 2px 2px 8px #2e1606;
+}
+
+.list-group {
+    margin-top: 10rem;
+    padding: 5rem 0;
+}
+
+.list-group-item {
+    padding: 25px 15px;
+    background-color: #5c3c23;
+    border: none;
+    border-radius: 0 !important;
+    color: #E5DCCB;
+    text-align: left;
+    padding-left: 4.5rem;
+}
+
+.list-group-item.active,
+.list-group-item:hover {
+    background-color: #A4410E;
+    color: #E5DCCB;
+}
+
+.list-group-item + .list-group-item {
+    margin-top: 0.2rem;
+}
+
+.logout-button {
+    margin-top: 15rem;
+}
+
+.main-content {
+    margin-left: 400px;
+}

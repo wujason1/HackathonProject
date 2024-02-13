@@ -1,8 +1,8 @@
 import React, { useState, useRef } from 'react';
 import { Modal, Button, Form, InputGroup } from 'react-bootstrap';
-//import '../Challenges.css';
+import './ChallengeBox.css';
 
-function ChallengeBox({title, description, type}) {
+function ChallengeBox({ title, description, type, icon: Icon }) {
     const [show, setShow] = useState(false);
 
     const handleClose = () => setShow(false);
@@ -11,10 +11,19 @@ function ChallengeBox({title, description, type}) {
     const [url, setUrl] = useState("");
 
     return (
-        <div>
+        <div className="challengeDiv">
             <Button className="challengeBox" size="lg" variant="light" onClick={handleShow}>
-            {title}
+                <div className="iconAndTitle">
+                    <div className="icon">
+                        {Icon && <Icon size={30} />}
+                    </div>
+                        <hr />
+                    <div className="title">
+                        {title}
+                    </div>
+                </div>
             </Button>
+
             <Modal
                 centered
                 show={show}
