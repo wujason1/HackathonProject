@@ -4,11 +4,48 @@ import './ChallengeBox.css';
 
 function ChallengeBox({ title, description, type, icon: Icon }) {
     const [show, setShow] = useState(false);
+    const [url, setUrl] = useState("");
 
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
 
-    const [url, setUrl] = useState("");
+    const handleUrl = async (e) => {
+        e.preventDefault();
+        if(title === "Coding Challenge"){
+            try {
+                const response = await fetch('http://localhost:8080/challenge/leetcodeSub?link=' + url, {
+                    method: 'POST'
+                });
+                if (response.ok) {
+                    console.log("success")
+                }
+                else {
+                    // show error message
+                }
+            }
+            catch (error) {
+                console.log(error);
+            }
+        }
+        if(title === "Earn a Certificate"){
+            try {
+                const response = await fetch('http://localhost:8080/challenge/linkedinCert?link=' + url, {
+                    method: 'POST'
+                });
+                if (response.ok) {
+                    console.log("success")
+                }
+                else {
+                    // show error message
+                }
+            }
+            catch (error) {
+                console.log(error);
+            }
+        }
+    }
+
+
 
     return (
         <div className="challengeDiv">
@@ -40,16 +77,20 @@ function ChallengeBox({ title, description, type, icon: Icon }) {
                   </Form.Group>
                 }
                 {type === 'url' &&
-                    <InputGroup className="mb-3">
-                        <Form.Control
-                          placeholder="Enter URL"
-                          aria-label="Recipient's username"
-                          aria-describedby="basic-addon2"
-                        />
-                        <Button variant="dark" id="button-addon2">
-                          Submit
-                        </Button>
-                    </InputGroup>
+                    <form onSubmit={handleUrl}>
+                        <InputGroup className="mb-3">
+                            <Form.Control
+                              placeholder="Enter URL"
+                              type="text"
+                              value={url}
+                              onChange={(e) => setUrl(e.target.value)}
+                              aria-describedby="basic-addon2"
+                            />
+                            <Button type="submit" variant="dark" id="button-addon2">
+                              Submit
+                            </Button>
+                        </InputGroup>
+                    </form>
                 }
                 {type === null &&
                     <Button onClick={handleClose}>
