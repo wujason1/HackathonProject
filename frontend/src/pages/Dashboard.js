@@ -27,7 +27,7 @@ const Dashboard = () => {
                     <div className='challengeDiv'>
                         <ChallengeBox
                         title={"Coding Challenge"}
-                        description={"Most software roles have a coding challenge in the interview process. Practicing with Leetcode helps keep your mind sharp for these interviews"}
+                        description={"Most software roles have a coding challenge in the interview process. Practicing with Leetcode helps keep your mind sharp for these interviews."}
                         type={"url"}
                         icon={JournalCode}
                         />
