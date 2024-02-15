@@ -29,7 +29,7 @@ const Registration = () => {
                 body: JSON.stringify(formData)
             });
             if (!response.ok) {
-                const data = await response.json();
+//                const data = await response.json();
                 setError('Email address already exists');
             } else {
                 console.log('User registered successfully!');

@@ -1,13 +1,39 @@
-import React, { useState, useRef } from 'react';
+import React, { useState } from 'react';
 import { Modal, Button, Form, InputGroup } from 'react-bootstrap';
 import './ChallengeBox.css';
 
 function ChallengeBox({ title, description, type, icon: Icon }) {
     const [show, setShow] = useState(false);
     const [url, setUrl] = useState("");
+    const [file, setFile] = useState("");
 
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
+
+    const handleUpload = async (e) =>{
+        e.preventDefault();
+        const formData = new FormData();
+        formData.append('file', file)
+        formData.append('fileName', file.name)
+        try {
+            const response = await fetch('http://localhost:8080/challenge/resume', {
+                method: 'POST',
+                body: formData
+            });
+            if(response.ok) {
+                // successful submission message
+                // close dialog
+                console.log("success");
+            }
+            else {
+                // show error message
+                console.log("didn't work");
+            }
+        }
+        catch (error) {
+            console.log(error);
+        }
+    }
 
     const handleUrl = async (e) => {
         e.preventDefault();
@@ -17,7 +43,9 @@ function ChallengeBox({ title, description, type, icon: Icon }) {
                     method: 'POST'
                 });
                 if (response.ok) {
-                    console.log("success")
+                    // successful submission message
+                    // close dialog
+                    console.log("success");
                 }
                 else {
                     // show error message
@@ -33,6 +61,8 @@ function ChallengeBox({ title, description, type, icon: Icon }) {
                     method: 'POST'
                 });
                 if (response.ok) {
+                    // successful submission message
+                    // close dialog
                     console.log("success")
                 }
                 else {
@@ -72,9 +102,17 @@ function ChallengeBox({ title, description, type, icon: Icon }) {
             <Modal.Body>{description}</Modal.Body>
             <Modal.Footer>
                 {type === 'file' &&
-                  <Form.Group controlId="formFile" className="mb-3">
-                    <Form.Control type="file" />
-                  </Form.Group>
+                  <form onSubmit={handleUpload}>
+                      <InputGroup className="mb-3">
+                        <Form.Control
+                            type="file"
+                            onChange={(e) => setFile(e.target.files[0])}
+                        />
+                        <Button type="submit" variant="dark" id="button-addon2">
+                          Upload
+                        </Button>
+                      </InputGroup>
+                  </form>
                 }
                 {type === 'url' &&
                     <form onSubmit={handleUrl}>
