@@ -1,14 +1,32 @@
-import React, { useState } from 'react';
-import { Modal, Button, Form, InputGroup } from 'react-bootstrap';
+import React, { useState, useEffect } from 'react';
+import { Modal, Button, Form, InputGroup, Alert } from 'react-bootstrap';
 import './ChallengeBox.css';
 
 function ChallengeBox({ title, description, type, icon: Icon }) {
     const [show, setShow] = useState(false);
+    const [isLoading, setLoading] = useState(false);
+    const [showSuccess, setShowSuccess] = useState(false);
+    const [showError, setShowError] = useState(false);
+
     const [url, setUrl] = useState("");
     const [file, setFile] = useState("");
 
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
+
+    useEffect(() => {
+        function simulateNetworkRequest() {
+          return new Promise((resolve) => setTimeout(resolve, 2000));
+        }
+
+        if (isLoading) {
+          simulateNetworkRequest().then(() => {
+            setLoading(false);
+          });
+        }
+    }, [isLoading]);
+
+    const handleClick = () => setLoading(true);
 
     const handleUpload = async (e) =>{
         e.preventDefault();
@@ -21,17 +39,20 @@ function ChallengeBox({ title, description, type, icon: Icon }) {
                 body: formData
             });
             if(response.ok) {
-                // successful submission message
-                // close dialog
-                console.log("success");
+//                console.log("success");
+                setShowError(false);
+                setShowSuccess(true);
             }
             else {
-                // show error message
-                console.log("didn't work");
+//                console.log("didn't work");
+                setShowSuccess(false);
+                setShowError(true);
             }
         }
         catch (error) {
-            console.log(error);
+//            console.log(error);
+            setShowSuccess(false);
+            setShowError(true);
         }
     }
 
@@ -43,16 +64,19 @@ function ChallengeBox({ title, description, type, icon: Icon }) {
                     method: 'POST'
                 });
                 if (response.ok) {
-                    // successful submission message
-                    // close dialog
-                    console.log("success");
+//                    console.log("success");
+                    setShowError(false);
+                    setShowSuccess(true);
                 }
                 else {
-                    // show error message
+                    setShowSuccess(false);
+                    setShowError(true);
                 }
             }
             catch (error) {
-                console.log(error);
+//                console.log(error);
+                setShowSuccess(false);
+                setShowError(true);
             }
         }
         if(title === "Earn a Certificate"){
@@ -61,16 +85,19 @@ function ChallengeBox({ title, description, type, icon: Icon }) {
                     method: 'POST'
                 });
                 if (response.ok) {
-                    // successful submission message
-                    // close dialog
-                    console.log("success")
+//                    console.log("success");
+                    setShowError(false);
+                    setShowSuccess(true);
                 }
                 else {
-                    // show error message
+                    setShowSuccess(false);
+                    setShowError(true);
                 }
             }
             catch (error) {
-                console.log(error);
+//                console.log(error);
+                setShowSuccess(false);
+                setShowError(true);
             }
         }
     }
@@ -99,23 +126,46 @@ function ChallengeBox({ title, description, type, icon: Icon }) {
             <Modal.Header closeButton>
               <Modal.Title>{title}</Modal.Title>
             </Modal.Header>
-            <Modal.Body>{description}</Modal.Body>
+            <Modal.Body>
+                {description}
+                {showSuccess && !isLoading &&
+                    <Alert variant="primary">
+                        Challenge completed! Please exit.
+                    </Alert>
+                }
+                {showError && !isLoading &&
+                    <Alert variant="danger">
+                        Invalid submission. Please try again.
+                    </Alert>
+                }
+            </Modal.Body>
             <Modal.Footer>
                 {type === 'file' &&
-                  <form onSubmit={handleUpload}>
+                  <form onSubmit={(e) => {
+                    handleUpload(e);
+                    handleClick(e);
+                  }}>
                       <InputGroup className="mb-3">
                         <Form.Control
                             type="file"
                             onChange={(e) => setFile(e.target.files[0])}
                         />
-                        <Button type="submit" variant="dark" id="button-addon2">
-                          Upload
+                        <Button
+                            type="submit"
+                            variant="dark"
+                            disabled={isLoading}
+                            id="button-addon2"
+                        >
+                          {isLoading ? 'Uploading' : 'Upload'}
                         </Button>
                       </InputGroup>
                   </form>
                 }
                 {type === 'url' &&
-                    <form onSubmit={handleUrl}>
+                    <form onSubmit={(e) => {
+                        handleUrl(e);
+                        handleClick(e);
+                    }}>
                         <InputGroup className="mb-3">
                             <Form.Control
                               placeholder="Enter URL"
@@ -124,8 +174,13 @@ function ChallengeBox({ title, description, type, icon: Icon }) {
                               onChange={(e) => setUrl(e.target.value)}
                               aria-describedby="basic-addon2"
                             />
-                            <Button type="submit" variant="dark" id="button-addon2">
-                              Submit
+                            <Button
+                                type="submit"
+                                variant="dark"
+                                disabled={isLoading}
+                                id="button-addon2"
+                            >
+                              {isLoading ? 'Submiting' : 'Submit'}
                             </Button>
                         </InputGroup>
                     </form>
