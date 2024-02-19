@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Button, Alert } from 'react-bootstrap'; // Import Alert component for showing error
+import { Button, Alert } from 'react-bootstrap';
+import bigLogo from '../images/bigLogo.png';
 import '../index.css';
 
 const Login = ( ) => {
@@ -33,7 +34,7 @@ const Login = ( ) => {
     return (
         <div>
             <div className="loginDiv">
-                <h1>Work In Progress</h1>
+                <img src={bigLogo} width="400" height="130" className="d-inline-block align-top" alt="bigLogo" />
                 <h2> Gamify Your Job Application Process!</h2>
                 <hr />
                 {showError && ( // Conditionally render error message

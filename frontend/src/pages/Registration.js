@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Button, Alert } from 'react-bootstrap';
+import bigLogo from '../images/bigLogo.png';
 
 const Registration = () => {
     const [formData, setFormData] = useState({
@@ -45,7 +46,7 @@ const Registration = () => {
     return (
         <div>
             <div className="loginDiv">
-                <h1>Work In Progress</h1>
+                <img src={bigLogo} width="400" height="130" className="d-inline-block align-top" alt="bigLogo" />
                 <h2>Sign Up</h2>
                 <hr />
 

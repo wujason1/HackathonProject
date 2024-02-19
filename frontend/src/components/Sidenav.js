@@ -10,16 +10,15 @@ const SideNav = () => {
 
   return (
     <div className="sidebar">
-        <div className="list-group">
+        <div className="sideNavLinks">
             <Link to="/dashboard" className={`list-group-item list-group-item-action ${isActive('/dashboard') ? 'active' : ''}`} > <BiBullseye/> &nbsp; Challenges </Link>
             <Link to="/prizes" className={`list-group-item list-group-item-action ${isActive('/prizes') ? 'active' : ''}`} > <BiTrophy/> &nbsp; Prizes </Link>
         </div>
         <div className="logout-button">
-            <Link to="/login" className={`list-group-item list-group-item-action ${isActive('/prizes') ? 'active' : ''}`} > <FaRegUserCircle/> &nbsp; Log Out </Link>
+            <Link to="/login" className={`list-group-item list-group-item-action ${isActive('/login') ? 'active' : ''}`} > <FaRegUserCircle/> &nbsp; Log Out </Link>
         </div>
     </div>
   );
 };
 
 export default SideNav;
-

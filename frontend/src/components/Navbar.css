@@ -4,3 +4,7 @@
 }
 
 .customHover:hover { color: #A4410E; }
+
+.navbarBrand {
+  margin-left: 10px;
+}
