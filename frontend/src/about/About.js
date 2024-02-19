@@ -8,6 +8,9 @@ import logo from '../images/logo.png';
 import layOff from '../images/layOff.png';
 import motivation from '../images/motivation.png';
 import stayMotivated from '../images/stayMotivated.png';
+import completeChallenges from '../images/completeChallenges.png'
+import givePrizes from '../images/givePrizes.png'
+import resetWeekly from '../images/resetWeekly.png'
 import socialMedia from '../images/socialMedia.png';
 import personalObj from '../images/personalObj.png';
 import expand from '../images/expand.png';
@@ -59,7 +62,7 @@ const About = () => {
         <Row className="rowPadding justify-content-center align-items-center h-100">
             <Col xs={6} className="d-flex justify-content-center align-items-center">
                 <div>
-                <h1>With a very saturated market it is extremely difficult for anyone to find a new tech job regardless of experience or education. One of the biggest struggles is staying motivated as time goes on with only rejection emails to show. </h1>
+                <h1>With a very saturated market it is difficult for anyone to find a tech job regardless of experience or education. One of the biggest struggles is staying motivated. </h1>
                 </div>
             </Col>
             <Col xs={6} className="d-flex justify-content-center align-items-center">
@@ -82,6 +85,47 @@ const About = () => {
             </Col>
         </Row>
 
+        <div className="banner"> </div>
+
+        <Row className="rowPadding justify-content-center align-items-center h-100">
+            <Col xs={6} className="d-flex justify-content-center align-items-center">
+                <div>
+                <h1>Work In Progress gives you a list of challenges to complete for the week ranging from completing a leetcode challenge to getting a certificate. </h1>
+                </div>
+            </Col>
+            <Col xs={6} className="d-flex justify-content-center align-items-center">
+                <div>
+                <img src={completeChallenges} alt="completeChallenges"></img>
+                </div>
+            </Col>
+        </Row>
+
+        <Row className="rowPadding justify-content-center align-items-center h-100">
+            <Col xs={6} className="d-flex justify-content-center align-items-center">
+                <div>
+                <img src={givePrizes} alt="givePrizes"></img>
+                </div>
+            </Col>
+            <Col xs={6} className="d-flex justify-content-center align-items-center">
+                <div>
+                <h1>Upon completing an challenge, you will be rewarded with a corresponding gift card.</h1>
+                </div>
+            </Col>
+        </Row>
+
+        <Row className="rowPadding justify-content-center align-items-center h-100">
+            <Col xs={6} className="d-flex justify-content-center align-items-center">
+                <div>
+                <h1>Challenges reset every week, so you always have challenges to complete. </h1>
+                </div>
+            </Col>
+            <Col xs={6} className="d-flex justify-content-center align-items-center">
+                <div>
+                <img src={resetWeekly} alt="resetWeekly"></img>
+                 </div>
+            </Col>
+        </Row>
+
         <div className="banner"> <h1>Future Plans</h1> </div>
         <h3>As a hackathon project, we aren't able to put in everything we want, but if had more time, here are some things we would have like to do</h3>
             <Row className="rowPadding">
@@ -91,7 +135,7 @@ const About = () => {
                 </Col>
                 <Col>
                     <img src={personalObj} alt="personalObj" width="150" height="150"></img>
-                    <h3>Personalized objectives</h3>
+                    <h3>More and Personalized Challenges</h3>
                 </Col>
                 <Col>
                     <img src={expand} alt="expand" width="150" height="150"></img>
