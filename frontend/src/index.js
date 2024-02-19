@@ -6,6 +6,7 @@ import Login from "./pages/Login";
 import Registration from "./pages/Registration";
 import Dashboard from "./pages/Dashboard";
 import NoPage from "./pages/NoPage";
+import Prizes from "./pages/Prizes"
 import MyNavbar from "./components/Navbar";
 
 export default function App() {
@@ -17,6 +18,7 @@ export default function App() {
             <Route path="login" element={<Login />} />
             <Route path="registration" element={<Registration />} />
             <Route path="dashboard" element={<Dashboard />} />
+            <Route path="prizes" element={<Prizes />} />
             <Route path="*" element={<NoPage />} />
         </Route>
       </Routes>
