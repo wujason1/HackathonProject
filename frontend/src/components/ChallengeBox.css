@@ -1,0 +1,26 @@
+.challengeDiv {
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.challengeBox {
+    padding: 5rem;
+    width: 40rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.iconAndTitle {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.iconAndTitle hr {
+    width: 50%;
+    margin: 1rem auto;
+    border-color: black;
+}

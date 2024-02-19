@@ -1,50 +1,55 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Button } from 'react-bootstrap';
+import { Button, Alert } from 'react-bootstrap'; // Import Alert component for showing error
 import '../index.css';
 
-const Login = () => {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+const Login = ( ) => {
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const [showError, setShowError] = useState(false);
 
-    const handleSubmit = async(e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        try{
+        try {
             const response = await fetch('http://localhost:8080/login?email=' + email + "&password=" + password, {
                 method: 'POST',
                 headers: {
-                'Accept' : 'application/json',
-                'Content-Type':'application/json',
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json',
                 },
             });
-          if (response.ok) {
-            console.log('User logged in successfully!');
-            // Redirect to dashboard upon successful registration
-            window.location.href = '/dashboard';
-          } else {
-            console.error('Login failed:', response.statusText);
-            // add pop up of incorrect login credentials?
-          }
+            if (response.ok) {
+                // Redirect to dashboard upon successful registration
+                window.location.href = '/dashboard';
+            } else {
+                // error message
+                setShowError(true);
+            }
         } catch (error) {
-            console.error('Login failed:', error.message);
+            setShowError(true);
         }
     }
 
-  return (
-  <div>
-    <div className="loginDiv">
-        <h1>Work In Progress</h1>
-        <h1> Gamify Your Job Application Process!</h1>
-        <hr />
-        <form onSubmit={handleSubmit}>
-            <input type="email" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} />
-            <input type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} />
-            <Button type="submit" variant="dark"> Login </Button>
-        </form>
-    <h4>Don't have an account? <Link to="/registration">Create one!</Link></h4>
-    </div>
-  </div>
-  );
+    return (
+        <div>
+            <div className="loginDiv">
+                <h1>Work In Progress</h1>
+                <h2> Gamify Your Job Application Process!</h2>
+                <hr />
+                {showError && ( // Conditionally render error message
+                    <Alert variant="danger">
+                        Incorrect email or password. Please try again.
+                    </Alert>
+                )}
+                <form onSubmit={handleSubmit}>
+                    <input type="email" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} />
+                    <input type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} />
+                    <Button type="submit" variant="dark"> Login </Button>
+                </form>
+                <h4>Don't have an account? <Link to="/registration">Create one!</Link></h4>
+            </div>
+        </div>
+    );
 };
 
 export default Login;
