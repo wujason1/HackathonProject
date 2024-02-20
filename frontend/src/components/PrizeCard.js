@@ -20,11 +20,11 @@ function PrizeCard({active, title, image}) {
                   delay={{ show: 250, hide: 400 }}
                   overlay={renderTooltip}
                 >
-                    <Button variant="primary" active="false">Redeem</Button>
+                    <Button variant="dark" active="false">Redeem</Button>
                 </OverlayTrigger>
             }
             {active === true &&
-                <Button variant="primary">Redeem</Button>
+                <Button variant="light">Redeem</Button>
             }
           </Card.Body>
         </Card>

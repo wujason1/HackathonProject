@@ -38,8 +38,10 @@ const About = () => {
             <Col xs={6} className="d-flex justify-content-center align-items-center">
                 <div>
                 <h1>Gamify Your Job Application Process! </h1>
-                <Link to="/registration"><Button variant="dark">Get Started</Button></Link>
-                <Link to="/login"><Button variant="light">I have an Account</Button></Link>
+                <div className="buttonRow">
+                    <Link to="/registration"><Button variant="dark">Get Started</Button></Link>
+                    <Link to="/login"><Button variant="light">I have an Account</Button></Link>
+                </div>
                 </div>
             </Col>
         </Row>

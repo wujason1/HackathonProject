@@ -12,6 +12,15 @@
 
 .rowPadding { padding: 0 300px; }
 
+.buttonRow {
+    display: flex;
+    justify-content: space-between;
+}
+
+.buttonRow {
+    margin: 0 50px;
+}
+
 .banner {
     margin: 20px 0;
     padding: 0;
