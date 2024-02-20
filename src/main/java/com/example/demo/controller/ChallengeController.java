@@ -19,6 +19,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -41,7 +42,7 @@ public class ChallengeController {
     public ResponseEntity<Object> resumeSubmission(@RequestParam("file") MultipartFile fileData) throws Throwable {
         System.out.println(fileData.getSize());
         System.out.println(fileData.getOriginalFilename());
-        challengeService.saveResume("resume", fileData);
+        challengeService.saveResume("resume", fileData, SecurityContextHolder.getContext().getAuthentication());
         String responseMessage = "{\"message\": \"File uploaded successfully\"}";
         return ResponseEntity.status(HttpStatus.OK).body(responseMessage);
     }
@@ -61,7 +62,7 @@ public class ChallengeController {
 //	        System.out.println(responseBody);
 //	        System.out.println(statusCode);
 
-            challengeService.saveLink("submission link", link);
+            challengeService.saveLink("leetcode submission link", link, SecurityContextHolder.getContext().getAuthentication());
             String json = "{\"message\": \"Leetcode link saved\"}";
             return ResponseEntity.status(HttpStatus.OK).body(json);
 
@@ -112,7 +113,7 @@ public class ChallengeController {
 //	            System.out.println(header.getName() + ": " + header.getValue());
 //	        }
 
-            challengeService.saveLink("certification link", link);
+            challengeService.saveLink("certification link", link, SecurityContextHolder.getContext().getAuthentication());
             String json = "{\"message\": \"Certification link saved\"}";
             return ResponseEntity.status(HttpStatus.OK).body(json);
 

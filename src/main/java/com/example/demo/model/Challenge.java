@@ -1,11 +1,19 @@
 package com.example.demo.model;
 
+import java.util.List;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
 import jakarta.persistence.Lob;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
+import jakarta.persistence.OneToOne;
+import jakarta.persistence.Table;
+import jakarta.persistence.UniqueConstraint;
 
 @Entity
 public class Challenge {
@@ -19,6 +27,16 @@ public class Challenge {
     private byte[] file;
     private String link;
 
+    @ManyToOne
+    @JoinColumn(name = "user_email", referencedColumnName = "email")
+    private User user;
+
+    @ManyToOne
+    @JoinColumn(name = "prize_id")
+    private Prize prize;
+
+    private boolean isClaimed;
+
     public Challenge() {}
 
     public Challenge(String type, byte[] file, String link) {
@@ -26,6 +44,10 @@ public class Challenge {
         this.type = type;
         this.file = file;
         this.link = link;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
     }
 
     public Long getId() {
@@ -51,6 +73,19 @@ public class Challenge {
     }
     public void setLink(String link) {
         this.link = link;
+    }
+
+    public void setPrize(Prize prize) {
+        // TODO Auto-generated method stub
+        this.prize = prize;
+    }
+
+    public boolean isClaimed() {
+        return isClaimed;
+    }
+
+    public void setClaimed(boolean isClaimed) {
+        this.isClaimed = isClaimed;
     }
 
 }
