@@ -21,21 +21,21 @@ const Prizes = () => {
                           <Row>
                               <Col>
                                   <PrizeCard
-                                      active={false}
+                                      id={1}
                                       title={"Amazon Gift Card"}
                                       image={amazon}
                                   />
                               </Col>
                               <Col>
                                   <PrizeCard
-                                      active={true}
+                                      id={2}
                                       title={"Pre-paid Visa"}
                                       image={visa}
                                   />
                               </Col>
                               <Col>
                                   <PrizeCard
-                                      active={true}
+                                      id={3}
                                       title={"Chipotle Meal"}
                                       image={chipotle}
                                   />

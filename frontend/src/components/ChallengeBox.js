@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Modal, Button, Form, InputGroup, Alert } from 'react-bootstrap';
 import './ChallengeBox.css';
+import Login from '../pages/Login.js'
+import Token from './Token.js'
 
 function ChallengeBox({ title, description, type, icon: Icon }) {
     const [show, setShow] = useState(false);
@@ -61,16 +63,21 @@ function ChallengeBox({ title, description, type, icon: Icon }) {
         if(title === "Coding Challenge"){
             try {
                 const response = await fetch('http://localhost:8080/challenge/leetcodeSub?link=' + url, {
-                    method: 'POST'
+                    method: 'POST',
+                    headers: {
+                        'Authorization' : 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJlcnlubkBlcnlubi5jb20iLCJpYXQiOjE3MDg0OTU1ODYsImV4cCI6MTcwODU4MTk4Nn0.vmLhX43Vp4Vetvc422V6awXFDCN9s1VtsmEIuMWvGaY'
+                    }
                 });
                 if (response.ok) {
 //                    console.log("success");
                     setShowError(false);
                     setShowSuccess(true);
+//                    console.log(token);
                 }
                 else {
                     setShowSuccess(false);
                     setShowError(true);
+//                    console.log({token});
                 }
             }
             catch (error) {
@@ -82,8 +89,12 @@ function ChallengeBox({ title, description, type, icon: Icon }) {
         if(title === "Earn a Certificate"){
             try {
                 const response = await fetch('http://localhost:8080/challenge/linkedinCert?link=' + url, {
-                    method: 'POST'
+                    method: 'POST',
+                    headers: {
+                        'Authorization' : 'Bearer '
+                    }
                 });
+//                console.log(Login.token);
                 if (response.ok) {
 //                    console.log("success");
                     setShowError(false);
