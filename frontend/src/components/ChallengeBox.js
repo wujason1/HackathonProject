@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Modal, Button, Form, InputGroup, Alert } from 'react-bootstrap';
 import './ChallengeBox.css';
 import Login from '../pages/Login.js'
-import Token from './Token.js'
+//import Token from './Token.js'
 
 function ChallengeBox({ title, description, type, icon: Icon }) {
     const [show, setShow] = useState(false);

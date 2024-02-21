@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { Button, Alert } from 'react-bootstrap';
 import bigLogo from '../images/bigLogo.png';
 import '../index.css';
-import Token from '../components/Token';
+//import Token from '../components/Token';
 
 const Login = ( ) => {
     const [email, setEmail] = useState('');
