@@ -11,8 +11,8 @@ const MyNavbar = () => {
   return (
     <>
       <Navbar className="navbar fixed-top customNavBar" expand="lg">
-        <Navbar.Brand href="/">
-            <img src={bigLogo} width="130" height="30" className="d-inline-block align-top" alt="bigLogo" />
+        <Navbar.Brand href="/" className="navbarBrand">
+          <img src={bigLogo} width="130" height="30" className="d-inline-block align-top" alt="bigLogo" />
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
