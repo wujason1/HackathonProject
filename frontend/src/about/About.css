@@ -14,11 +14,13 @@
 
 .buttonRow {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
 }
 
-.buttonRow {
-    margin: 0 50px;
+.buttonRow a {
+    width: 100%;
+    margin-bottom: 10px;
 }
 
 .banner {
@@ -43,12 +45,16 @@
 .teamMembers {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
-    margin: 0 10rem;
+    justify-content: center;
+    margin: 0 auto;
+    max-width: 1200px;
+    padding: 0 20px;
 }
 
 .teamMember {
-    width: calc(33.33% - 20px);
+    max-width: 300px;
+    margin: 10px;
+    width: 100%;
     margin-bottom: 20px;
     padding: 10px;
     background-color: #492309;
@@ -59,12 +65,66 @@
 .teamMemberPic {
     width: 150px;
     height: 150px;
-     border-radius: 50%;
+    border-radius: 50%;
 }
-
-@media (max-width: 768px) { .team-member { width: calc(50% - 20px); }}
 
 .footer {
     margin-top: 30px;
     background-color: #492309;
+}
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+    .text-center h1 {
+        font-size: 24px;
+    }
+
+    .columnAlign {
+        flex-direction: column;
+        max-width: 100%;
+    }
+
+    .rowPadding {
+        padding: 0;
+        margin: 0;
+    }
+
+    .rowPadding .col {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+
+    .centerAlign {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .buttonRow {
+        flex-direction: row;
+    }
+
+    .buttonRow a {
+        width: auto;
+        margin-bottom: 0;
+        margin-right: 10px;
+    }
+
+    .teamMember {
+        width: calc(50% - 20px);
+    }
+}
+
+/* Media query for larger screens */
+@media (min-width: 768px) {
+    .buttonRow {
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    .buttonRow a {
+        width: auto;
+        margin-bottom: 0;
+        margin-right: 10px;
+    }
 }

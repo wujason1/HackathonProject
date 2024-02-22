@@ -3,8 +3,11 @@ import { Navbar, Nav } from 'react-bootstrap';
 import { Link, Outlet } from 'react-router-dom';
 import bigLogo from '../images/bigLogo.png';
 import './Navbar.css';
+import { useAuth } from './AuthContext';
 
 const MyNavbar = () => {
+    const { isLoggedIn } = useAuth();
+
   return (
     <>
       <Navbar className="navbar fixed-top customNavBar" expand="lg">
@@ -14,7 +17,11 @@ const MyNavbar = () => {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ml-auto">
-            <Nav.Link as={Link} to="/login" className="customHover">&#9814; Log In</Nav.Link>
+            {isLoggedIn ? (
+              <Nav.Link as={Link} to="/dashboard" className="customHover">&#9820; Dashboard</Nav.Link>
+            ) : (
+              <Nav.Link as={Link} to="/login" className="customHover">&#9814; Log In</Nav.Link>
+            )}
           </Nav>
         </Navbar.Collapse>
       </Navbar>
@@ -23,6 +30,6 @@ const MyNavbar = () => {
       </div>
     </>
   );
-}
+};
 
 export default MyNavbar;

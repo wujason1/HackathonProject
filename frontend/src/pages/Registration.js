@@ -30,7 +30,6 @@ const Registration = () => {
                 body: JSON.stringify(formData)
             });
             if (!response.ok) {
-//                const data = await response.json();
                 setError('Email address already exists');
             } else {
                 console.log('User registered successfully!');
@@ -46,7 +45,7 @@ const Registration = () => {
     return (
         <div>
             <div className="loginDiv">
-                <img src={bigLogo} width="400" height="130" className="d-inline-block align-top" alt="bigLogo" />
+                <img src={bigLogo} className="imgResponsive d-inline-block align-top" alt="bigLogo" />
                 <h2>Sign Up</h2>
                 <hr />
 

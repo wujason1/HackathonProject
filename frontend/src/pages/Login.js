@@ -3,8 +3,10 @@ import { Link } from 'react-router-dom';
 import { Button, Alert } from 'react-bootstrap';
 import bigLogo from '../images/bigLogo.png';
 import '../index.css';
+import { useAuth } from '../components/AuthContext';
 
 const Login = ( ) => {
+    const { login } = useAuth();
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [showError, setShowError] = useState(false);
@@ -23,6 +25,7 @@ const Login = ( ) => {
             localStorage.setItem('token', data.token);
             if (response.ok) {
                 // Redirect to dashboard upon successful registration
+                login();
                 window.location.href = '/dashboard';
 
             } else {
@@ -37,10 +40,10 @@ const Login = ( ) => {
     return (
         <div>
             <div className="loginDiv">
-                <img src={bigLogo} width="400" height="130" className="d-inline-block align-top" alt="bigLogo" />
+                <img src={bigLogo} className="imgResponsive d-inline-block align-top" alt="bigLogo" />
                 <h2> Gamify Your Job Application Process!</h2>
                 <hr />
-                {showError && ( // Conditionally render error message
+                {showError && ( // error message on wrong info
                     <Alert variant="danger">
                         Incorrect email or password. Please try again.
                     </Alert>

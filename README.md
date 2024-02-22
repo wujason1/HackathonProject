@@ -1,93 +1,47 @@
-# Gitlab Hackathon Plan
+# GitLab Innovation Pitch Competition
 
 
 
-## Getting started
+## Work in Progress
 
-To make it easy for you to get started with GitLab, here's a list of recommended next steps.
+In 2023, over 262,000 tech workers lost their jobs. In 2024, that number is currently at 32,496 as of February 5 and is expected to surpass 2023. One of the biggest challenges for those affected is staying motivated, especially in the current job market.
 
-Already a pro? Just edit this README.md and make it your own. Want to make it easy? [Use the template at the bottom](#editing-this-readme)!
+Work in Progress aims to gamify the job application process, keeping tech industry jobseekers in the US motivated with rewards. Our web app offers a series of challenges based around the job hunting process and career goals. As jobseekers complete these challenges, they unlock a variety of gift cards to their favorite stores or restaurants.
 
-## Add your files
-
-- [ ] [Create](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#create-a-file) or [upload](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#upload-a-file) files
-- [ ] [Add files using the command line](https://docs.gitlab.com/ee/gitlab-basics/add-file.html#add-a-file-using-the-command-line) or push an existing Git repository with the following command:
-
-```
-cd existing_repo
-git remote add origin https://gitlab.com/funemployed/gitlab-hackathon-plan.git
-git branch -M main
-git push -uf origin main
-```
-
-## Integrate with your tools
-
-- [ ] [Set up project integrations](https://gitlab.com/funemployed/gitlab-hackathon-plan/-/settings/integrations)
-
-## Collaborate with your team
-
-- [ ] [Invite team members and collaborators](https://docs.gitlab.com/ee/user/project/members/)
-- [ ] [Create a new merge request](https://docs.gitlab.com/ee/user/project/merge_requests/creating_merge_requests.html)
-- [ ] [Automatically close issues from merge requests](https://docs.gitlab.com/ee/user/project/issues/managing_issues.html#closing-issues-automatically)
-- [ ] [Enable merge request approvals](https://docs.gitlab.com/ee/user/project/merge_requests/approvals/)
-- [ ] [Set auto-merge](https://docs.gitlab.com/ee/user/project/merge_requests/merge_when_pipeline_succeeds.html)
-
-## Test and Deploy
-
-Use the built-in continuous integration in GitLab.
-
-- [ ] [Get started with GitLab CI/CD](https://docs.gitlab.com/ee/ci/quick_start/index.html)
-- [ ] [Analyze your code for known vulnerabilities with Static Application Security Testing (SAST)](https://docs.gitlab.com/ee/user/application_security/sast/)
-- [ ] [Deploy to Kubernetes, Amazon EC2, or Amazon ECS using Auto Deploy](https://docs.gitlab.com/ee/topics/autodevops/requirements.html)
-- [ ] [Use pull-based deployments for improved Kubernetes management](https://docs.gitlab.com/ee/user/clusters/agent/)
-- [ ] [Set up protected environments](https://docs.gitlab.com/ee/ci/environments/protected_environments.html)
-
-***
-
-# Editing this README
-
-When you're ready to make this README your own, just edit this file and use the handy template below (or feel free to structure it however you want - this is just a starting point!). Thanks to [makeareadme.com](https://www.makeareadme.com/) for this template.
-
-## Suggestions for a good README
-
-Every project is different, so consider which of these sections apply to yours. The sections used in the template are suggestions for most open source projects. Also keep in mind that while a README can be too long and detailed, too long is better than too short. If you think your README is too long, consider utilizing another form of documentation rather than cutting out information.
-
-## Name
-Choose a self-explaining name for your project.
-
-## Description
-Let people know what your project can do specifically. Provide context and add a link to any reference visitors might be unfamiliar with. A list of Features or a Background subsection can also be added here. If there are alternatives to your project, this is a good place to list differentiating factors.
-
-## Badges
-On some READMEs, you may see small images that convey metadata, such as whether or not all the tests are passing for the project. You can use Shields to add some to your README. Many services also have instructions for adding a badge.
-
-## Visuals
-Depending on what you are making, it can be a good idea to include screenshots or even a video (you'll frequently see GIFs rather than actual videos). Tools like ttygif can help, but check out Asciinema for a more sophisticated method.
+With Work in Progress, finding the next dream job will be more than a challenge. It will be an adventure filled with rewards and excitement.
 
 ## Installation
-Within a particular ecosystem, there may be a common way of installing things, such as using Yarn, NuGet, or Homebrew. However, consider the possibility that whoever is reading your README is a novice and would like more guidance. Listing specific steps helps remove ambiguity and gets people to using your project as quickly as possible. If it only runs in a specific context like a particular programming language version or operating system or has dependencies that have to be installed manually, also add a Requirements subsection.
+1. Fork the project and open it in your favorite IDE
+2. Start the backend, by running HackathonProjectApplication. It can be found by going through src > main > java > HackathonProjectApplication
+3. In your terminal, navigate to the frontend folder of the project
+4. Run the command 'npm start'
+5. You may need to run 'npm install' before 'npm start' if it is giving errors
 
-## Usage
-Use examples liberally, and show the expected output if you can. It's helpful to have inline the smallest example of usage that you can demonstrate, while providing links to more sophisticated examples if they are too long to reasonably include in the README.
+## Chosen Technologies
+### React
+The team went with React for our front-end framework due to its efficiency and flexibility, especially for a project of this size. And the amount of documentation support for React was extremely helpful in our development process. 
 
-## Support
-Tell people where they can go to for help. It can be any combination of an issue tracker, a chat room, an email address, etc.
+### Bootstrap
+We were initially torn between TailwindCSS and Bootstrap for the CSS framework, but went with Bootstrap due to finding more support and documentation.
 
-## Roadmap
-If you have ideas for releases in the future, it is a good idea to list them in the README.
+### Spring Boot (Java)
+The team has a lot of experience with Spring Boot and Java, making it the obvious choice for the backend framework.
 
-## Contributing
-State if you are open to contributions and what your requirements are for accepting them.
+## Obstacles
+Getting the front and back end is usually the hardest part of a project. Learning React was another big learning curve as the team was more familiar with Angular.
 
-For people who want to make changes to your project, it's helpful to have some documentation on how to get started. Perhaps there is a script that they should run or some environment variables that they need to set. Make these steps explicit. These instructions could also be useful to your future self.
+## Assumptions
+Due to timing, the web application was designed with computer users only in mind. The web app is not as mobile friendly as we would like.
 
-You can also document commands to lint the code or run tests. These steps help to ensure high code quality and reduce the likelihood that the changes inadvertently break something. Having instructions for running tests is especially helpful if it requires external setup, such as starting a Selenium server for testing in a browser.
+## If there was time
+We would have loved have added more challenges ranging from attending a career fair, share or post on LinkedIn, to attending workshops. And with more challenges, we could add a feature to personalize the challenges based on what the jobseeker is trying to do with their career. Also, it would have been nice to be able to create our own personalized art for the entire project outside the logo and about page background.
+
+It would have also been helpful to take the time to perform some usability tests with potential users to get feedback on how we can improve UI and other features such as a profile page.
+
+We would also add end-to-end testing, better security functionalities, and learn to incorporate some of the amazing DevOps tools GitLab has to offer.
 
 ## Authors and acknowledgment
-Show your appreciation to those who have contributed to the project.
+Thank you, Erynn Ramos and Jason Wu for joining me on this project. You made the start of 2024 absolutely amazing. I enjoyed being able to work with both of you again. Whoever eventually hires you both will be extremely lucky to have you on their team. -Kira Sanford
 
 ## License
 For open source projects, say how it is licensed.
-
-## Project status
-If you have run out of energy or time for your project, put a note at the top of the README saying that development has slowed down or stopped completely. Someone may choose to fork your project or volunteer to step in as a maintainer or owner, allowing your project to keep going. You can also make an explicit request for maintainers.
