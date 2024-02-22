@@ -3,6 +3,9 @@ package com.example.demo.service;
 import java.io.IOException;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.scheduling.annotation.EnableScheduling;
+import org.springframework.scheduling.annotation.Scheduled;
+
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
@@ -54,6 +57,11 @@ public class ChallengeService {
         }
         challenge.setPrize(prize);
         return challengeRepository.save(challenge);
+    }
+    @Scheduled(cron = "0 0 0 * * MON")
+    public void eraseChallengesTable() {
+        System.out.println("Erasing challenges table...");
+        challengeRepository.deleteAll();
     }
 
 
