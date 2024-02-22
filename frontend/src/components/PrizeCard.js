@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Card, Button } from 'react-bootstrap';
+import { Card, Button, Toast, ToastContainer } from 'react-bootstrap';
 import { Tooltip, OverlayTrigger } from 'react-bootstrap';
 
 function PrizeCard({id, title, image}) {
@@ -9,6 +9,9 @@ function PrizeCard({id, title, image}) {
       Challenge not completed. Please go to Challenges page to complete Challenge.
     </Tooltip>
   );
+  const [show, setShow] = useState(false);
+
+  const toggleShow = () => setShow(!show);
 
     useEffect(() => {
         fetch('http://localhost:8080/prizes/' + id, {
@@ -32,14 +35,21 @@ function PrizeCard({id, title, image}) {
                   delay={{ show: 250, hide: 400 }}
                   overlay={renderTooltip}
                 >
-                    <Button variant="dark" active="false">Redeem</Button>
+                    <span className="d-inline-block">
+                        <Button variant="dark" disabled style={{ pointerEvents: 'none' }}>Redeem</Button>
+                    </span>
                 </OverlayTrigger>
             }
             {active &&
-                <Button variant="light">Redeem</Button>
+                <Button variant="light" onClick={toggleShow}>Redeem</Button>
             }
           </Card.Body>
         </Card>
+        <ToastContainer>
+            <Toast show={show} onClose={toggleShow} autohide>
+                <Toast.Body style={{color: 'black'}}>Congratulations! Prize redeemed and sent to your email.</Toast.Body>
+            </Toast>
+        </ToastContainer>
     </>
   );
 }
