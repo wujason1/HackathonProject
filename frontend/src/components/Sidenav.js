@@ -7,13 +7,12 @@ import { useAuth } from './AuthContext';
 
 const SideNav = () => {
     const location = useLocation();
-    const { logout } = useAuth(); // Get the logout function from the authentication context
+    const { logout } = useAuth();
     const isActive = (pathname) => location.pathname === pathname;
 
     const handleLogout = () => {
         logout();
     };
-
 
   return (
     <div className="sidebar">
