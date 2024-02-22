@@ -54,6 +54,11 @@ hr {
     background-position: 25%;
 }
 
+.imgResponsive {
+    max-width: 100%;
+    height: auto;
+}
+
 .loginDiv {
     margin: 0 37%;
     padding: 5rem 2%;
@@ -118,4 +123,11 @@ code {
 .btn-light:hover {
   background-color: #C58A35;
   border-color: #C58A35;
+}
+
+@media (max-width: 768px) {
+    .loginDiv {
+        margin: 0 5%;
+        padding: 3rem 2%;
+    }
 }

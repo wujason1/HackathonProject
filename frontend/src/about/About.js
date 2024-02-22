@@ -29,19 +29,19 @@ const About = () => {
 
   return (
     <div className="background">
-        <Row className="rowPadding justify-content-center align-items-center h-100">
-            <Col xs={6} className="d-flex justify-content-center align-items-center">
+        <Row className="rowPadding justify-content-center align-items-center h-100 stackVertically">
+            <Col xs={12} md={6} className="d-flex justify-content-center align-items-center">
                 <div>
-                <img src={logo} alt="logo" width="800" height="800"></img>
+                    <img src={logo} alt="logo" className="img-fluid" />
                 </div>
             </Col>
-            <Col xs={6} className="d-flex justify-content-center align-items-center">
+            <Col xs={12} md={6} className="d-flex flex-column justify-content-center align-items-center">
                 <div>
-                <h1>Gamify Your Job Application Process! </h1>
-                <div className="buttonRow">
-                    <Link to="/registration"><Button variant="dark">Get Started</Button></Link>
-                    <Link to="/login"><Button variant="light">I have an Account</Button></Link>
-                </div>
+                    <h1 className="text-center">Gamify Your Job Application Process!</h1>
+                    <div className="buttonRow">
+                        <Link to="/registration"><Button variant="dark">Get Started</Button></Link>
+                        <Link to="/login"><Button variant="light">I have an Account</Button></Link>
+                    </div>
                 </div>
             </Col>
         </Row>
@@ -87,8 +87,6 @@ const About = () => {
             </Col>
         </Row>
 
-        <div className="banner"> </div>
-
         <Row className="rowPadding justify-content-center align-items-center h-100">
             <Col xs={6} className="d-flex justify-content-center align-items-center">
                 <div>
@@ -130,7 +128,7 @@ const About = () => {
 
         <div className="banner"> <h1>Future Plans</h1> </div>
         <h3>As a hackathon project, we aren't able to put in everything we want, but if had more time, here are some things we would have like to do</h3>
-            <Row className="rowPadding">
+            <Row className="rowPadding center-align-cols">
                 <Col>
                     <img src={socialMedia} alt="socialMedia" width="150" height="150"></img>
                     <h3>Set up social media</h3>
@@ -149,7 +147,9 @@ const About = () => {
                 </Col>
             </Row>
 
-        <h1>Meet the Team</h1>
+        <div className="banner">         <h1>Meet the Team</h1></div>
+
+
         <div className="teamMembers">
             {teamMembers.map((member, index) => (
                 <TeamMember key={index} name={member.name} position={member.position} image={member.image} />

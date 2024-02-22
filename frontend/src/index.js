@@ -10,22 +10,24 @@ import Prizes from "./pages/Prizes"
 import MyNavbar from "./components/Navbar";
 import { AuthProvider } from './components/AuthContext';
 
+
 export default function App() {
-  return (
-    <AuthProvider>
-      <BrowserRouter>
+
+    return (
+        <AuthProvider>
+        <BrowserRouter>
         <MyNavbar />
         <Routes>
-          <Route path="/" element={<About />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/registration" element={<Registration />} />
-          <Route path="/dashboard" element={<Dashboard />} />
-          <Route path="/prizes" element={<Prizes />} />
-          <Route path="*" element={<NoPage />} />
+            <Route path="/" element={<About />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/registration" element={<Registration />} />
+            <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/prizes" element={<Prizes />} />
+            <Route path="*" element={<NoPage />} />
         </Routes>
-      </BrowserRouter>
-    </AuthProvider>
-  );
+        </BrowserRouter>
+        </AuthProvider>
+    );
 };
 
 const root = createRoot(document.getElementById('root'));
