@@ -4,8 +4,16 @@ import PrizeCard from '../components/PrizeCard.js';
 import amazon from '../images/amazon.png';
 import visa from '../images/visa.png';
 import chipotle from '../images/chipotle.png';
+import { useAuth } from '../components/AuthContext';
 
 const Prizes = () => {
+    const { isLoggedIn } = useAuth();
+
+    // If not logged in, redirect to login page
+     if (!isLoggedIn) {
+        window.location.href = '/login';
+        return null;
+     }
 
   return (
     <div className="container-fluid">

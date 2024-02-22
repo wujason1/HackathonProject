@@ -1,9 +1,26 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import ChallengeBox from '../components/ChallengeBox.js'
 import Sidenav from '../components/Sidenav';
 import { FileEarmarkPerson, JournalCode, Award } from 'react-bootstrap-icons';
+import { useAuth } from '../components/AuthContext';
 
 const Dashboard = () => {
+    const { isLoggedIn } = useAuth();
+    const [shouldRedirect, setShouldRedirect] = useState(false);
+
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            setShouldRedirect(!isLoggedIn);
+        }, 100);
+        return () => clearTimeout(timer);
+    }, [isLoggedIn]);
+
+    // If not logged in, redirect to login page
+    if (shouldRedirect) {
+        window.location.href = '/login';
+        return null;
+    }
+
   return (
     <div className="container-fluid">
         <div className="row">
