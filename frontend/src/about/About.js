@@ -118,7 +118,7 @@ const About = () => {
         <Row className="rowPadding justify-content-center align-items-center h-100">
             <Col xs={6} className="d-flex justify-content-center align-items-center">
                 <div>
-                <h1>Challenges reset every week, so you always have challenges to complete. </h1>
+                <h1>Challenges reset every week, so you will always have something to complete. </h1>
                 </div>
             </Col>
             <Col xs={6} className="d-flex justify-content-center align-items-center">
