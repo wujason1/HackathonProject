@@ -16,7 +16,7 @@ function PrizeCard({id, title, image}) {
         const response = await fetch('http://localhost:8080/prizes/' + id, {
             method: 'GET',
             headers: {
-                'Authorization' : 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJlcnlubkBlcnlubi5jb20iLCJpYXQiOjE3MDg0OTU1ODYsImV4cCI6MTcwODU4MTk4Nn0.vmLhX43Vp4Vetvc422V6awXFDCN9s1VtsmEIuMWvGaY'
+                'Authorization' : 'Bearer ' + localStorage.getItem('token')
             },
         });
         const data = await response.json();

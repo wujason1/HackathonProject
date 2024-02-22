@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import { Button, Alert } from 'react-bootstrap';
 import bigLogo from '../images/bigLogo.png';
 import '../index.css';
-//import Token from '../components/Token';
 
 const Login = ( ) => {
     const [email, setEmail] = useState('');
@@ -21,12 +20,9 @@ const Login = ( ) => {
                 },
             });
             const data = await response.json();
-//            console.log(data.token);
-//            global.token = data.token
-//            window.token = data.token
+            localStorage.setItem('token', data.token);
             if (response.ok) {
                 // Redirect to dashboard upon successful registration
-//                console.log(data.token);
                 window.location.href = '/dashboard';
 
             } else {
