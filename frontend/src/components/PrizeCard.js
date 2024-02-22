@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Card, Button } from 'react-bootstrap';
 import { Tooltip, OverlayTrigger } from 'react-bootstrap';
 
@@ -10,35 +10,16 @@ function PrizeCard({id, title, image}) {
     </Tooltip>
   );
 
-  const handlePrize = async (e) => {
-    e.preventDefault();
-    try {
-        const response = await fetch('http://localhost:8080/prizes/' + id, {
+    useEffect(() => {
+        fetch('http://localhost:8080/prizes/' + id, {
             method: 'GET',
             headers: {
                 'Authorization' : 'Bearer ' + localStorage.getItem('token')
             },
-        });
-        const data = await response.json();
-        if (data.message === "Prize claimed") {
-//            active = true;
-            setActive(true)
-        }
-        else if (data.message === "Prize can't be claimed") {
-//            active = false;
-            setActive(false)
-        }
-        else {
-//            active = true;
-        }
-    }
-    catch(error){
+        }).then(response => response.json())
+        .then(data => setActive(data.message))
+      }, []);
 
-    }
-
-  }
-
-// need to call function once page is rendered/loaded...
   return (
     <>
         <Card style={{ width: '18rem' }}>
