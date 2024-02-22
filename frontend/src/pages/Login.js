@@ -19,9 +19,12 @@ const Login = ( ) => {
                     'Content-Type': 'application/json',
                 },
             });
+            const data = await response.json();
+            localStorage.setItem('token', data.token);
             if (response.ok) {
                 // Redirect to dashboard upon successful registration
                 window.location.href = '/dashboard';
+
             } else {
                 // error message
                 setShowError(true);

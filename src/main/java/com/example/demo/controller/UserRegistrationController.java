@@ -4,24 +4,33 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
 
 import com.example.demo.model.User;
 import com.example.demo.service.UserService;
 
-@Controller
+@RestController
+@RequestMapping("/user")
 public class UserRegistrationController {
 
 	@Autowired
 	private UserService userService;
 
-
 	@GetMapping("/registration")
-	public String showRegistrationPage() {
-		return "registration.html";
+	public ResponseEntity<Object> showRegistrationPage() {
+		String json = "{\"message\": \"Registration Endpoint Works\"}";
+
+		return ResponseEntity.status(HttpStatus.OK).body(json);
 	}
 
-	@PostMapping(value = "/registration")
+	@PostMapping("/registration")
 	public ResponseEntity<Object> registerUserAccount(@RequestBody User user) {
 		System.out.println(user.getId());
 		System.out.println(user.getFirstName());
@@ -46,4 +55,26 @@ public class UserRegistrationController {
 
 	}
 
+	@GetMapping("/edit")
+	public ResponseEntity<Object> showEditForm() {
+
+		String json = "{\"message\": \"Edit Endpoint Works\"}";
+
+		return ResponseEntity.status(HttpStatus.OK).body(json);
+	}
+
+	@PostMapping("/edit")
+	public ResponseEntity<Object> updateUser(@RequestBody User user) {
+		User expectedUser = userService.findUserByEmail(user.getEmail());
+		if(expectedUser==null) {
+			String json = "{\"message\": \"No user found\"}";
+			return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(json);
+		} else {
+			expectedUser.setFirstName(user.getFirstName());
+			expectedUser.setLastName(user.getLastName());
+			expectedUser.setPassword(user.getPassword());
+			userService.save(expectedUser);
+			return ResponseEntity.status(HttpStatus.OK).body(expectedUser);
+		}
+	}
 }

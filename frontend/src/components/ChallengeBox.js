@@ -36,6 +36,9 @@ function ChallengeBox({ title, description, type, icon: Icon }) {
         try {
             const response = await fetch('http://localhost:8080/challenge/resume', {
                 method: 'POST',
+                headers: {
+                    'Authorization' : 'Bearer ' + localStorage.getItem('token')
+                },
                 body: formData
             });
             if(response.ok) {
@@ -61,7 +64,10 @@ function ChallengeBox({ title, description, type, icon: Icon }) {
         if(title === "Coding Challenge"){
             try {
                 const response = await fetch('http://localhost:8080/challenge/leetcodeSub?link=' + url, {
-                    method: 'POST'
+                    method: 'POST',
+                    headers: {
+                        'Authorization' : 'Bearer ' + localStorage.getItem('token')
+                    }
                 });
                 if (response.ok) {
 //                    console.log("success");
@@ -82,7 +88,10 @@ function ChallengeBox({ title, description, type, icon: Icon }) {
         if(title === "Earn a Certificate"){
             try {
                 const response = await fetch('http://localhost:8080/challenge/linkedinCert?link=' + url, {
-                    method: 'POST'
+                    method: 'POST',
+                    headers: {
+                        'Authorization' : 'Bearer ' + localStorage.getItem('token')
+                    }
                 });
                 if (response.ok) {
 //                    console.log("success");
