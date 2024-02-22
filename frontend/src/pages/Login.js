@@ -4,7 +4,6 @@ import { Button, Alert } from 'react-bootstrap';
 import bigLogo from '../images/bigLogo.png';
 import '../index.css';
 import { useAuth } from '../components/AuthContext';
-//import Token from '../components/Token';
 
 const Login = ( ) => {
     const { login } = useAuth();
@@ -23,14 +22,12 @@ const Login = ( ) => {
                 },
             });
             const data = await response.json();
-//            console.log(data.token);
-//            global.token = data.token
-//            window.token = data.token
+            localStorage.setItem('token', data.token);
             if (response.ok) {
                 // Redirect to dashboard upon successful registration
-//                console.log(data.token);
                 login();
                 window.location.href = '/dashboard';
+
             } else {
                 // error message
                 setShowError(true);
@@ -43,10 +40,10 @@ const Login = ( ) => {
     return (
         <div>
             <div className="loginDiv">
-                <img src={bigLogo} width="400" height="130" className="d-inline-block align-top" alt="bigLogo" />
+                <img src={bigLogo} className="imgResponsive d-inline-block align-top" alt="bigLogo" />
                 <h2> Gamify Your Job Application Process!</h2>
                 <hr />
-                {showError && ( // Conditionally render error message
+                {showError && ( // error message on wrong info
                     <Alert variant="danger">
                         Incorrect email or password. Please try again.
                     </Alert>
