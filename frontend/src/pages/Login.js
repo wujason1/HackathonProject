@@ -3,9 +3,11 @@ import { Link } from 'react-router-dom';
 import { Button, Alert } from 'react-bootstrap';
 import bigLogo from '../images/bigLogo.png';
 import '../index.css';
+import { useAuth } from '../components/AuthContext';
 //import Token from '../components/Token';
 
 const Login = ( ) => {
+    const { login } = useAuth();
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [showError, setShowError] = useState(false);
@@ -27,8 +29,8 @@ const Login = ( ) => {
             if (response.ok) {
                 // Redirect to dashboard upon successful registration
 //                console.log(data.token);
+                login();
                 window.location.href = '/dashboard';
-
             } else {
                 // error message
                 setShowError(true);
