@@ -27,7 +27,6 @@ const Login = ( ) => {
                 // Redirect to dashboard upon successful registration
                 login();
                 window.location.href = '/dashboard';
-                console.log('going to dashboard');
 
             } else {
                 // error message
