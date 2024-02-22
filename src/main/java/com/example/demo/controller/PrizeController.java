@@ -29,11 +29,13 @@ public class PrizeController {
 
         if(result) {
 
-            String json = "{\"message\": \"Prize claimed\"}";
+//            String json = "{\"message\": \"Prize claimed\"}";
+            String json = "{\"message\": true}";
             return ResponseEntity.status(HttpStatus.OK).body(json);
         } else {
             //could be because already claimed or user did not do the challenge needed to claim the prize
-            String json = "{\"message\": \"Prize can't be claimed\"}";
+//            String json = "{\"message\": \"Prize can't be claimed\"}";
+            String json = "{\"message\": false}";
             return ResponseEntity.status(HttpStatus.OK).body(json);
         }
     }

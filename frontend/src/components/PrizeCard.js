@@ -1,5 +1,5 @@
-import { useState } from 'react';
-import { Card, Button } from 'react-bootstrap';
+import { useState, useEffect } from 'react';
+import { Card, Button, Toast, ToastContainer } from 'react-bootstrap';
 import { Tooltip, OverlayTrigger } from 'react-bootstrap';
 
 function PrizeCard({id, title, image}) {
@@ -9,36 +9,20 @@ function PrizeCard({id, title, image}) {
       Challenge not completed. Please go to Challenges page to complete Challenge.
     </Tooltip>
   );
+  const [show, setShow] = useState(false);
 
-  const handlePrize = async (e) => {
-    e.preventDefault();
-    try {
-        const response = await fetch('http://localhost:8080/prizes/' + id, {
+  const toggleShow = () => setShow(!show);
+
+    useEffect(() => {
+        fetch('http://localhost:8080/prizes/' + id, {
             method: 'GET',
             headers: {
-                'Authorization' : 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJlcnlubkBlcnlubi5jb20iLCJpYXQiOjE3MDg0OTU1ODYsImV4cCI6MTcwODU4MTk4Nn0.vmLhX43Vp4Vetvc422V6awXFDCN9s1VtsmEIuMWvGaY'
+                'Authorization' : 'Bearer ' + localStorage.getItem('token')
             },
-        });
-        const data = await response.json();
-        if (data.message === "Prize claimed") {
-//            active = true;
-            setActive(true)
-        }
-        else if (data.message === "Prize can't be claimed") {
-//            active = false;
-            setActive(false)
-        }
-        else {
-//            active = true;
-        }
-    }
-    catch(error){
+        }).then(response => response.json())
+        .then(data => setActive(data.message))
+      }, []);
 
-    }
-
-  }
-
-// need to call function once page is rendered/loaded...
   return (
     <>
         <Card style={{ width: '18rem' }}>
@@ -51,14 +35,21 @@ function PrizeCard({id, title, image}) {
                   delay={{ show: 250, hide: 400 }}
                   overlay={renderTooltip}
                 >
-                    <Button variant="dark" active="false">Redeem</Button>
+                    <span className="d-inline-block">
+                        <Button variant="dark" disabled style={{ pointerEvents: 'none' }}>Redeem</Button>
+                    </span>
                 </OverlayTrigger>
             }
             {active &&
-                <Button variant="light">Redeem</Button>
+                <Button variant="light" onClick={toggleShow}>Redeem</Button>
             }
           </Card.Body>
         </Card>
+        <ToastContainer>
+            <Toast show={show} onClose={toggleShow} autohide>
+                <Toast.Body style={{color: 'black'}}>Congratulations! Prize redeemed and sent to your email.</Toast.Body>
+            </Toast>
+        </ToastContainer>
     </>
   );
 }
