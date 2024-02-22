@@ -4,16 +4,8 @@ import PrizeCard from '../components/PrizeCard.js';
 import amazon from '../images/amazon.png';
 import visa from '../images/visa.png';
 import chipotle from '../images/chipotle.png';
-import { useAuth } from '../components/AuthContext';
 
 const Prizes = () => {
-    const { isLoggedIn } = useAuth();
-
-    // If not logged in, redirect to login page
-     if (!isLoggedIn) {
-        window.location.href = '/login';
-        return null;
-     }
 
   return (
     <div className="container-fluid">
@@ -25,8 +17,11 @@ const Prizes = () => {
           <div className="col-md-9">
             <main role="main" className="px-4">
               <div className="colorWhite">
-                    <Container fluid="sm">
-                          <Row>
+                <h1> Prizes </h1>
+                 <br />
+
+                <Container fluid="sm">
+                    <Row className="justify-content-center">
                               <Col>
                                   <PrizeCard
                                       id={1}
@@ -48,8 +43,8 @@ const Prizes = () => {
                                       image={chipotle}
                                   />
                               </Col>
-                          </Row>
-                      </Container>
+                    </Row>
+                </Container>
               </div>
             </main>
           </div>
