@@ -15,6 +15,7 @@ With Work in Progress, finding the next dream job will be more than a challenge.
 2. Start the backend, by running HackathonProjectApplication. It can be found by going through src > main > java > HackathonProjectApplication
 3. In your terminal, navigate to the frontend folder of the project
 4. Run the command 'npm start'
+5. You may need to run 'npm install' before 'npm start' if it is giving errors
 
 ## Chosen Technologies
 ### React
