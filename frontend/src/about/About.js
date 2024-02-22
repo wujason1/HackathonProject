@@ -29,13 +29,13 @@ const About = () => {
 
   return (
     <div className="background">
-        <Row className="rowPadding justify-content-center align-items-center h-100 stackVertically">
-            <Col xs={12} md={6} className="d-flex justify-content-center align-items-center">
+        <Row className="rowPadding justify-content-center align-items-center h-100 columnAlign">
+            <Col xs={12} sm={6} className="d-flex justify-content-center align-items-center">
                 <div>
                     <img src={logo} alt="logo" className="img-fluid" />
                 </div>
             </Col>
-            <Col xs={12} md={6} className="d-flex flex-column justify-content-center align-items-center">
+            <Col xs={12} sm={6} className="d-flex justify-content-center align-items-center">
                 <div>
                     <h1 className="text-center">Gamify Your Job Application Process!</h1>
                     <div className="buttonRow">
@@ -48,87 +48,87 @@ const About = () => {
 
         <div className="banner"> <h1>Get Rewarded! Whether You Land The Job Or Not</h1> </div>
 
-        <Row className="rowPadding justify-content-center align-items-center h-100">
-            <Col xs={6} className="d-flex justify-content-center align-items-center">
+        <Row className="rowPadding justify-content-center align-items-center h-100 columnAlign">
+            <Col xs={12} sm={6} className="d-flex justify-content-center align-items-center">
                 <div>
-                <img src={layOff} alt="layOff"></img>
+                <img src={layOff} alt="layOff" className="imgResponsive" />
                 </div>
             </Col>
-            <Col xs={6} className="d-flex justify-content-center align-items-center">
+            <Col xs={12} sm={6} className="d-flex justify-content-center align-items-center">
                 <div>
                 <h1>In 2023, a reported 262,682 workers in tech lost their jobs. An increase from 164,969 in 2022. The number is expected to continue to rise in 2024, with the number at 32,496 as of February 5. (<a href="https://www.nerdwallet.com/article/finance/tech-layoffs#:~:text=A%20total%20of%20262%2C682%20workers,in%202020%20and%202021%20combined.">source</a>)</h1>
                 </div>
             </Col>
         </Row>
 
-        <Row className="rowPadding justify-content-center align-items-center h-100">
-            <Col xs={6} className="d-flex justify-content-center align-items-center">
+        <Row className="rowPadding justify-content-center align-items-center h-100 columnAlign">
+            <Col xs={12} sm={6} className="d-flex justify-content-center align-items-center">
                 <div>
                 <h1>With a very saturated market it is difficult for anyone to find a tech job regardless of experience or education. One of the biggest struggles is staying motivated. </h1>
                 </div>
             </Col>
-            <Col xs={6} className="d-flex justify-content-center align-items-center">
+            <Col xs={12} sm={6} className="d-flex justify-content-center align-items-center">
                 <div>
-                <img src={motivation} alt="motivation"></img>
+                <img src={motivation} alt="motivation" className="imgResponsive" />
                  </div>
             </Col>
         </Row>
 
-        <Row className="rowPadding justify-content-center align-items-center h-100">
-            <Col xs={6} className="d-flex justify-content-center align-items-center">
+        <Row className="rowPadding justify-content-center align-items-center h-100 columnAlign">
+            <Col xs={12} sm={6} className="d-flex justify-content-center align-items-center">
                 <div>
-                <img src={stayMotivated} alt="stayMotivated"></img>
+                <img src={stayMotivated} alt="stayMotivated" className="imgResponsive" />
                 </div>
             </Col>
-            <Col xs={6} className="d-flex justify-content-center align-items-center">
+            <Col xs={12} sm={6} className="d-flex justify-content-center align-items-center">
                 <div>
                 <h1>Stay motivated with Work In Progress! We help you stick with your objectives and reward you for your progress.</h1>
                 </div>
             </Col>
         </Row>
 
-        <Row className="rowPadding justify-content-center align-items-center h-100">
-            <Col xs={6} className="d-flex justify-content-center align-items-center">
+        <Row className="rowPadding justify-content-center align-items-center h-100 columnAlign">
+            <Col xs={12} sm={6} className="d-flex justify-content-center align-items-center">
                 <div>
                 <h1>Work In Progress gives you a list of challenges to complete for the week ranging from completing a leetcode challenge to getting a certificate. </h1>
                 </div>
             </Col>
-            <Col xs={6} className="d-flex justify-content-center align-items-center">
+            <Col xs={12} sm={6} className="d-flex justify-content-center align-items-center">
                 <div>
-                <img src={completeChallenges} alt="completeChallenges"></img>
+                <img src={completeChallenges} alt="completeChallenges" className="imgResponsive" />
                 </div>
             </Col>
         </Row>
 
-        <Row className="rowPadding justify-content-center align-items-center h-100">
-            <Col xs={6} className="d-flex justify-content-center align-items-center">
+        <Row className="rowPadding justify-content-center align-items-center h-100 columnAlign">
+            <Col xs={12} sm={6} className="d-flex justify-content-center align-items-center">
                 <div>
-                <img src={givePrizes} alt="givePrizes"></img>
+                <img src={givePrizes} alt="givePrizes" className="imgResponsive" />
                 </div>
             </Col>
-            <Col xs={6} className="d-flex justify-content-center align-items-center">
+            <Col xs={12} sm={6} className="d-flex justify-content-center align-items-center">
                 <div>
                 <h1>Upon completing an challenge, you will be rewarded with a corresponding gift card.</h1>
                 </div>
             </Col>
         </Row>
 
-        <Row className="rowPadding justify-content-center align-items-center h-100">
-            <Col xs={6} className="d-flex justify-content-center align-items-center">
+        <Row className="rowPadding justify-content-center align-items-center h-100 columnAlign">
+            <Col xs={12} sm={6} className="d-flex justify-content-center align-items-center">
                 <div>
-                <h1>Challenges reset every week, so you will always have something to complete. </h1>
+                    <h1>Challenges reset every week, so you will always have something to complete.</h1>
                 </div>
             </Col>
-            <Col xs={6} className="d-flex justify-content-center align-items-center">
+            <Col xs={12} sm={6} className="d-flex justify-content-center align-items-center">
                 <div>
-                <img src={resetWeekly} alt="resetWeekly"></img>
-                 </div>
+                    <img src={resetWeekly} alt="resetWeekly" className="imgResponsive" />
+                </div>
             </Col>
         </Row>
 
         <div className="banner"> <h1>Future Plans</h1> </div>
         <h3>As a hackathon project, we aren't able to put in everything we want, but if had more time, here are some things we would have like to do</h3>
-            <Row className="rowPadding center-align-cols">
+            <Row className="rowPadding centerAlign">
                 <Col>
                     <img src={socialMedia} alt="socialMedia" width="150" height="150"></img>
                     <h3>Set up social media</h3>

@@ -74,8 +74,27 @@
 }
 
 /* Media query for smaller screens */
-@media (max-width: 767.98px) {
-    .center-align-cols {
+@media (max-width: 768px) {
+    .text-center h1 {
+        font-size: 24px;
+    }
+
+    .columnAlign {
+        flex-direction: column;
+        max-width: 100%;
+    }
+
+    .rowPadding {
+        padding: 0;
+        margin: 0;
+    }
+
+    .rowPadding .col {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+
+    .centerAlign {
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
@@ -89,10 +108,6 @@
         width: auto;
         margin-bottom: 0;
         margin-right: 10px;
-    }
-
-    .rowPadding {
-        padding: 0;
     }
 
     .teamMember {
