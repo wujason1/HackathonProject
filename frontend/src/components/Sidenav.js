@@ -14,6 +14,7 @@ const SideNav = () => {
         logout();
     };
 
+
   return (
     <div className="sidebar">
         <div className="sideNavLinks">
