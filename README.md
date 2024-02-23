@@ -12,10 +12,18 @@ With Work in Progress, finding the next dream job will be more than a challenge.
 
 ## Installation
 1. Fork the project and open it in your favorite IDE
-2. Start the backend, by running HackathonProjectApplication. It can be found by going through src > main > java > HackathonProjectApplication
-3. In your terminal, navigate to the frontend folder of the project
-4. Run the command 'npm start'
-5. You may need to run 'npm install' before 'npm start' if it is giving errors
+(Backend set up)
+2. Connect to a MySQL database with the following information:
+    - Connection Name: hackathon
+    - Host: localhost
+    - Port: 3306
+    - User: root
+    - SSL: not enabled  
+3. Run HackathonProjectApplication. It can be found by going through src > main > java > HackathonProjectApplication
+(Frontend set up)
+4. In your terminal, navigate to the frontend folder of the project
+5. Run the command 'npm install'
+6. Run the command 'npm start' to start the project
 
 ## Chosen Technologies
 ### React
@@ -42,6 +50,8 @@ We would also add end-to-end testing, better security functionalities, and learn
 
 ## Authors and acknowledgment
 Thank you, Erynn Ramos and Jason Wu for joining me on this project. You made the start of 2024 absolutely amazing. I enjoyed being able to work with both of you again. Whoever eventually hires you both will be extremely lucky to have you on their team. -Kira Sanford
+
+I love taking on new challenges and learning new things in the process! I'm so grateful I was able to participate and contribute to this project. It was wonderful being able to work together as a team again. -Erynn Ramos
 
 ## License
 For open source projects, say how it is licensed.
