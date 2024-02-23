@@ -110,7 +110,7 @@
     }
 
     .teamMember {
-        width: calc(50% - 20px);
+        width: calc(80% - 20px);
     }
 }
 
