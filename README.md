@@ -12,7 +12,7 @@ With Work in Progress, finding the next dream job will be more than a challenge.
 
 ## Installation
 1. Fork the project and open it in your favorite IDE
-(Backend set up)
+<br/>(Backend set up)<br/>
 2. Connect to a MySQL database with the following information:
     - Connection Name: hackathon
     - Host: localhost
@@ -20,7 +20,7 @@ With Work in Progress, finding the next dream job will be more than a challenge.
     - User: root
     - SSL: not enabled  
 3. Run HackathonProjectApplication. It can be found by going through src > main > java > HackathonProjectApplication
-(Frontend set up)
+<br/>(Frontend set up)<br/>
 4. In your terminal, navigate to the frontend folder of the project
 5. Run the command 'npm install'
 6. Run the command 'npm start' to start the project
