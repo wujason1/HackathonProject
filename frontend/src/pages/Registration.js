@@ -1,9 +1,19 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Button, Alert } from 'react-bootstrap';
 import bigLogo from '../images/bigLogo.png';
+import { useAuth } from '../components/AuthContext';
 
 const Registration = () => {
+    const { login, isLoggedIn } = useAuth();
+
+    useEffect(() => {
+        // If already logged in, redirect to dashboard
+        if (isLoggedIn) {
+            window.location.href = '/dashboard';
+        }
+    }, [isLoggedIn]);
+
     const [formData, setFormData] = useState({
         firstName: '',
         lastName: '',

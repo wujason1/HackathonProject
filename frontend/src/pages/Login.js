@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Button, Alert } from 'react-bootstrap';
 import bigLogo from '../images/bigLogo.png';
@@ -6,10 +6,17 @@ import '../index.css';
 import { useAuth } from '../components/AuthContext';
 
 const Login = ( ) => {
-    const { login } = useAuth();
+    const { login, isLoggedIn } = useAuth();
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [showError, setShowError] = useState(false);
+
+    useEffect(() => {
+        // If already logged in, redirect to dashboard
+        if (isLoggedIn) {
+            window.location.href = '/dashboard';
+        }
+    }, [isLoggedIn]);
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -24,12 +31,11 @@ const Login = ( ) => {
             const data = await response.json();
             localStorage.setItem('token', data.token);
             if (response.ok) {
-                // Redirect to dashboard upon successful registration
+                // Redirect to dashboard upon successful login
                 login();
                 window.location.href = '/dashboard';
-
             } else {
-                // error message
+                // Show error message
                 setShowError(true);
             }
         } catch (error) {
