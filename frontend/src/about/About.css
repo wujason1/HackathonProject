@@ -73,7 +73,7 @@
     background-color: #492309;
 }
 
-/* Media query for smaller screens */
+/* For smaller screens */
 @media (max-width: 768px) {
     .text-center h1 {
         font-size: 24px;
@@ -101,25 +101,24 @@
     }
 
     .buttonRow {
-        flex-direction: row;
+        display: flex;
+        justify-content: center;
     }
 
     .buttonRow a {
-        width: auto;
-        margin-bottom: 0;
-        margin-right: 10px;
+        margin: 5px;
     }
 
     .teamMember {
-        width: calc(50% - 20px);
+        width: calc(80% - 20px);
     }
 }
 
-/* Media query for larger screens */
+/* For larger screens */
 @media (min-width: 768px) {
     .buttonRow {
-        flex-direction: row;
-        justify-content: center;
+        flex-direction: column;
+        align-items: center;
     }
 
     .buttonRow a {

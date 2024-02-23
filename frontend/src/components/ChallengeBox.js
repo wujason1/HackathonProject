@@ -42,18 +42,15 @@ function ChallengeBox({ title, description, type, icon: Icon }) {
                 body: formData
             });
             if(response.ok) {
-//                console.log("success");
                 setShowError(false);
                 setShowSuccess(true);
             }
             else {
-//                console.log("didn't work");
                 setShowSuccess(false);
                 setShowError(true);
             }
         }
         catch (error) {
-//            console.log(error);
             setShowSuccess(false);
             setShowError(true);
         }
@@ -70,7 +67,6 @@ function ChallengeBox({ title, description, type, icon: Icon }) {
                     }
                 });
                 if (response.ok) {
-//                    console.log("success");
                     setShowError(false);
                     setShowSuccess(true);
                 }
@@ -80,7 +76,6 @@ function ChallengeBox({ title, description, type, icon: Icon }) {
                 }
             }
             catch (error) {
-//                console.log(error);
                 setShowSuccess(false);
                 setShowError(true);
             }
@@ -94,7 +89,6 @@ function ChallengeBox({ title, description, type, icon: Icon }) {
                     }
                 });
                 if (response.ok) {
-//                    console.log("success");
                     setShowError(false);
                     setShowSuccess(true);
                 }
@@ -104,7 +98,6 @@ function ChallengeBox({ title, description, type, icon: Icon }) {
                 }
             }
             catch (error) {
-//                console.log(error);
                 setShowSuccess(false);
                 setShowError(true);
             }

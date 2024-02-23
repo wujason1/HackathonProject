@@ -24,3 +24,23 @@
     margin: 1rem auto;
     border-color: black;
 }
+
+/* For smaller screens */
+@media (max-width: 768px) {
+    .challengeDiv {
+         margin: 10px;
+     }
+
+    .challengeDiv Button {
+       height: auto;
+    }
+
+    .challengeBox {
+        padding: 2rem;
+        width: 100%;
+    }
+
+    .iconAndTitle hr {
+        width: 100%;
+    }
+}

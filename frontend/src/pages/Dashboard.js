@@ -28,7 +28,7 @@ const Dashboard = () => {
                 <Sidenav />
             </div>
 
-            <div className="col-md-9">
+            <div className="col-md-9 d-flex justify-content-center align-items-center">
                 <main role="main" className="px-4">
                     <div className="colorWhite">
                         <h1>Challenges</h1>

@@ -38,28 +38,28 @@ const Prizes = () => {
                  <br />
 
                 <Container fluid="sm">
-                    <Row className="justify-content-center">
-                              <Col>
-                                  <PrizeCard
-                                      id={1}
-                                      title={"Amazon Gift Card"}
-                                      image={amazon}
-                                  />
-                              </Col>
-                              <Col>
-                                  <PrizeCard
-                                      id={2}
-                                      title={"Pre-paid Visa"}
-                                      image={visa}
-                                  />
-                              </Col>
-                              <Col>
-                                  <PrizeCard
-                                      id={3}
-                                      title={"Chipotle Meal"}
-                                      image={chipotle}
-                                  />
-                              </Col>
+                    <Row className="jd-flex justify-content-center">
+                        <Col xs={12} sm={6} md={4} lg={3} className="mb-3">
+                            <PrizeCard
+                                id={1}
+                                title={"Amazon Gift Card"}
+                                image={amazon}
+                            />
+                        </Col>
+                        <Col xs={12} sm={6} md={4} lg={3} className="mb-3">
+                            <PrizeCard
+                                id={2}
+                                title={"Pre-paid Visa"}
+                                image={visa}
+                            />
+                        </Col>
+                        <Col xs={12} sm={6} md={4} lg={3} className="mb-3">
+                            <PrizeCard
+                                id={3}
+                                title={"Chipotle Meal"}
+                                image={chipotle}
+                            />
+                        </Col>
                     </Row>
                 </Container>
               </div>
