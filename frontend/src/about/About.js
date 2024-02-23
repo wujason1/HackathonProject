@@ -49,12 +49,12 @@ const About = () => {
         <div className="banner"> <h1>Get Rewarded! Whether You Land The Job Or Not.</h1> </div>
 
         <Row className="rowPadding justify-content-center align-items-center h-100 columnAlign">
-            <Col xs={12} sm={6} className="d-flex justify-content-center align-items-center">
+            <Col xs={12} sm={6} className="d-flex justify-content-center align-items-center mt-3 mt-sm-0">
                 <div>
                     <h1>In 2023, a reported 262,682 workers in tech lost their jobs. An increase from 164,969 in 2022. The number is expected to continue to rise in 2024, with the number at 32,496 as of February 5. (<a href="https://www.nerdwallet.com/article/finance/tech-layoffs#:~:text=A%20total%20of%20262%2C682%20workers,in%202020%20and%202021%20combined.">source</a>)</h1>
                 </div>
             </Col>
-            <Col xs={12} sm={6} className="d-flex justify-content-center align-items-center">
+            <Col xs={12} sm={6} className="d-flex justify-content-center align-items-center mt-3 mt-sm-0">
                 <div>
                     <img src={layOff} alt="layOff" className="imgResponsive" />
                 </div>

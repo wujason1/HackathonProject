@@ -6,27 +6,25 @@ html, body {
 }
 
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  background-size: stretch;
-  background-image: linear-gradient(rgba(73,35,9,1), rgba(73,35,9,1), rgba(73,35,9,1), rgba(73,35,9,0.7)), url("images/boardGameDrawings.png");
-  background-size: auto;
-  background-color: #492309;
-  text-align: center;
-  padding-top: 70px;
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+      sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-image: linear-gradient(rgba(73,35,9,1), rgba(73,35,9,1), rgba(73,35,9,1), rgba(73,35,9,0.7)), url("images/boardGameDrawings.png");
+    background-size: auto;
+    background-color: #492309;
+    text-align: center;
+    padding-top: 70px;
+    background-position: center bottom;
+    background-attachment: fixed;
+    height: 100%;
 }
 
-* {
-  box-sizing: border-box;
-}
+h1, h2 { font-family: 'Play', sans-serif; }
 
-h1, h2 {
-    font-family: 'Play', sans-serif;
-}
+.colorWhite { color: #E5DCCB; }
 
 hr {
     width: 95%;
@@ -35,10 +33,6 @@ hr {
     border-radius: 25px;
     color: #A4410E;
     background-color: #E5DCCB;
-}
-
-.colorWhite {
-    color: #E5DCCB;
 }
 
 .missionStatement {
@@ -84,11 +78,6 @@ input[type=text], input[type=email], input[type=password] {
 
 input[type=text]::placeholder, input[type=email]::placeholder, input[type=password]::placeholder {
     text-align: center;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
 }
 
 .btn-dark {
