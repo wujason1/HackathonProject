@@ -73,7 +73,7 @@
     background-color: #492309;
 }
 
-/* Media query for smaller screens */
+/* For smaller screens */
 @media (max-width: 768px) {
     .text-center h1 {
         font-size: 24px;
@@ -115,7 +115,7 @@
     }
 }
 
-/* Media query for larger screens */
+/* For larger screens */
 @media (min-width: 768px) {
     .buttonRow {
         flex-direction: row;

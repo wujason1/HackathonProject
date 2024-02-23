@@ -1,9 +1,10 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import './Sidenav.css';
-import { BiBullseye, BiTrophy} from 'react-icons/bi';
+import { BiBullseye, BiTrophy } from 'react-icons/bi';
 import { FaRegUserCircle } from 'react-icons/fa';
 import { useAuth } from './AuthContext';
+import { Nav } from 'react-bootstrap';
+import './Sidenav.css';
 
 const SideNav = () => {
     const location = useLocation();
@@ -14,20 +15,15 @@ const SideNav = () => {
         logout();
     };
 
-
-  return (
-    <div className="sidebar">
-        <div className="sideNavLinks">
-            <Link to="/dashboard" className={`list-group-item list-group-item-action ${isActive('/dashboard') ? 'active' : ''}`} > <BiBullseye/> &nbsp; Challenges </Link>
-            <Link to="/prizes" className={`list-group-item list-group-item-action ${isActive('/prizes') ? 'active' : ''}`} > <BiTrophy/> &nbsp; Prizes </Link>
+    return (
+        <div className="sidebar">
+            <Nav className="flex-column sideNavLinks">
+                <Nav.Link as={Link} to="/dashboard" className={`nav-link ${isActive('/dashboard') ? 'active' : ''} sideNavDiv`}><BiBullseye /> Challenges</Nav.Link>
+                <Nav.Link as={Link} to="/prizes" className={`nav-link ${isActive('/prizes') ? 'active' : ''} sideNavDiv`}><BiTrophy /> Prizes</Nav.Link>
+                <Nav.Link onClick={handleLogout} className="nav-link sideNavDiv"><FaRegUserCircle /> Log Out</Nav.Link>
+            </Nav>
         </div>
-        <div className="logout-button">
-            <Link to="/login" onClick={handleLogout} className={`list-group-item list-group-item-action ${isActive('/login') ? 'active' : ''}`}>
-                <FaRegUserCircle/> &nbsp; Log Out
-            </Link>
-        </div>
-    </div>
-  );
+    );
 };
 
 export default SideNav;

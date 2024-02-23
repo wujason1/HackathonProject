@@ -127,7 +127,8 @@ code {
 
 @media (max-width: 768px) {
     .loginDiv {
-        margin: 0 5%;
+        margin: auto;
         padding: 3rem 2%;
+        max-width: 90%;
     }
 }
