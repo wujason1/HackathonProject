@@ -36,7 +36,7 @@ We were initially torn between TailwindCSS and Bootstrap for the CSS framework, 
 The team has a lot of experience with Spring Boot and Java, making it the obvious choice for the backend framework.
 
 ## Obstacles
-Getting the front and back end is usually the hardest part of a project. Learning React was another big learning curve as the team was more familiar with Angular.
+Getting the front and back end to connect is usually the hardest part of a project. Learning React was another big learning curve as the team was more familiar with Angular.
 
 ## Assumptions
 Due to timing, the web application was designed with computer users only in mind. The web app is not as mobile friendly as we would like.
