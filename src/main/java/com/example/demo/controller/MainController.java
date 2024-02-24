@@ -57,16 +57,11 @@ public class MainController {
 
 	@PostMapping("/login")
 	public ResponseEntity<Object> registerUserAccount(HttpServletRequest request, @RequestParam(required = false) String email, @RequestParam(required = false) String password, @RequestHeader(value="Authorization", required = false) String token) throws Exception {
-		System.out.println("login endpoint reached!");
 		if(token!=null) {
-			System.out.println("Processing token");
-			//System.out.println("|" + token + "|");
 			final String userEmail = jwtService.extractUsername(token.substring(7));
 			if (userEmail != null) {
-				System.out.println("Processing token2");
 				UserDetails userDetails = this.userDetailsService.loadUserByUsername(userEmail);
 				if(jwtService.isTokenValid(token.substring(7), userDetails)) {
-					System.out.println("Processing token3");
 					String json = "{\"message\": \"valid token, logged in\"}";
 					return ResponseEntity.status(HttpStatus.OK).body(json);
 				}

@@ -27,17 +27,7 @@ public class PrizeService {
     public boolean canClaimPrize(String email, Long id) {
 
         List<Object[]> unclaimedPrizes = prizeRepository.findAllUnclaimedChallengesWithPrizesByUserEmailAndPrizeType(email, id);
-        System.out.println("unclaimedPrizes: " + unclaimedPrizes.size());
         for (Object[] prizeData : unclaimedPrizes) {
-            System.out.println("Prize ID: " + prizeData.length);
-            System.out.println("Prize ID: " + prizeData[0]);
-            System.out.println("Prize Type: " + prizeData[1]);
-            System.out.println("Prize Type: " + prizeData[2]);
-            System.out.println("Prize Type: " + prizeData[3]);
-            System.out.println("Prize Type: " + prizeData[4]);
-            System.out.println("Prize Type: " + prizeData[5]);
-            System.out.println("Prize Type: " + prizeData[6]);
-            System.out.println("Prize Type: " + prizeData[7]);
             Long challengeId = (Long) prizeData[0];
             Optional<Challenge> optionalChallenge = challengeRepository.findById(challengeId);
             if (optionalChallenge.isPresent()) {

@@ -32,9 +32,6 @@ public class UserRegistrationController {
 
 	@PostMapping("/registration")
 	public ResponseEntity<Object> registerUserAccount(@RequestBody User user) {
-		System.out.println(user.getId());
-		System.out.println(user.getFirstName());
-		System.out.println(user.getEmail());
 		User existingUser = userService.findUserByEmail(user.getEmail());
 		if (existingUser != null) {
 			String json = "{\"message\": \"User with this email already exists\"}";

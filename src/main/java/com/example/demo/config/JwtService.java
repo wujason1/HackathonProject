@@ -51,14 +51,12 @@ public class JwtService {
     }
 
     public String generateToken(UserDetails userDetails) {
-        System.out.println("userDetails: " + userDetails.getUsername());
         String token = Jwts.builder()
                 .subject(userDetails.getUsername())
                 .setIssuedAt(new Date(System.currentTimeMillis()))
                 .setExpiration(new Date(System.currentTimeMillis() + 24 * 60 * 60 * 1000))
                 .signWith(getSigInKey(), SignatureAlgorithm.HS256)
                 .compact();
-        System.out.println("token: " + token);
         return token;
     }
 
