@@ -34,7 +34,7 @@ const Registration = () => {
             return;
         }
         try {
-            const response = await fetch('http://localhost:8080/user/registration', {
+            const response = await fetch('http://18.223.21.3:8080/user/registration', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(formData)

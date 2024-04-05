@@ -2,6 +2,7 @@ package com.example.demo.model;
 
 import java.util.List;
 
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -14,8 +15,10 @@ import jakarta.persistence.OneToMany;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 import jakarta.persistence.UniqueConstraint;
+import lombok.Builder;
 
 @Entity
+@Builder
 public class Challenge {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -87,5 +90,16 @@ public class Challenge {
     public void setClaimed(boolean isClaimed) {
         this.isClaimed = isClaimed;
     }
+
+	public Challenge(Long id, String type, byte[] file, String link, User user, Prize prize, boolean isClaimed) {
+		super();
+		this.id = id;
+		this.type = type;
+		this.file = file;
+		this.link = link;
+		this.user = user;
+		this.prize = prize;
+		this.isClaimed = isClaimed;
+	}
 
 }

@@ -34,7 +34,7 @@ function ChallengeBox({ title, description, type, icon: Icon }) {
         formData.append('file', file)
         formData.append('fileName', file.name)
         try {
-            const response = await fetch('http://localhost:8080/challenge/resume', {
+            const response = await fetch('http://18.223.21.3:8080/challenge/resume', {
                 method: 'POST',
                 headers: {
                     'Authorization' : 'Bearer ' + localStorage.getItem('token')
@@ -60,7 +60,7 @@ function ChallengeBox({ title, description, type, icon: Icon }) {
         e.preventDefault();
         if(title === "Coding Challenge"){
             try {
-                const response = await fetch('http://localhost:8080/challenge/leetcodeSub?link=' + url, {
+                const response = await fetch('http://18.223.21.3:8080/challenge/leetcodeSub?link=' + url, {
                     method: 'POST',
                     headers: {
                         'Authorization' : 'Bearer ' + localStorage.getItem('token')
@@ -82,7 +82,7 @@ function ChallengeBox({ title, description, type, icon: Icon }) {
         }
         if(title === "Earn a Certificate"){
             try {
-                const response = await fetch('http://localhost:8080/challenge/linkedinCert?link=' + url, {
+                const response = await fetch('http://18.223.21.3:8080/challenge/linkedinCert?link=' + url, {
                     method: 'POST',
                     headers: {
                         'Authorization' : 'Bearer ' + localStorage.getItem('token')

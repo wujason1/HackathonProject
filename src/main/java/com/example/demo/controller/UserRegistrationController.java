@@ -2,6 +2,7 @@ package com.example.demo.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -35,6 +36,7 @@ public class UserRegistrationController {
 		User existingUser = userService.findUserByEmail(user.getEmail());
 		if (existingUser != null) {
 			String json = "{\"message\": \"User with this email already exists\"}";
+			//return ResponseEntity.status(HttpStatus.BAD_REQUEST).contentType(MediaType.APPLICATION_JSON).body(json);
 			return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(json);
 		}
 

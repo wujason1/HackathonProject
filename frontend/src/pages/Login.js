@@ -21,7 +21,7 @@ const Login = ( ) => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await fetch('http://localhost:8080/login?email=' + email + "&password=" + password, {
+            const response = await fetch('http://18.223.21.3:8080/login?email=' + email + "&password=" + password, {
                 method: 'POST',
                 headers: {
                     'Accept': 'application/json',

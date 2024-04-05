@@ -58,6 +58,7 @@ public class ChallengeService {
         challenge.setPrize(prize);
         return challengeRepository.save(challenge);
     }
+    
     @Scheduled(cron = "0 0 0 * * MON")
     public void eraseChallengesTable() {
         System.out.println("Erasing challenges table...");

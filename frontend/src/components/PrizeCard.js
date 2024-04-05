@@ -14,7 +14,7 @@ function PrizeCard({id, title, image}) {
   const toggleShow = () => setShow(!show);
 
     useEffect(() => {
-        fetch('http://localhost:8080/prizes/' + id, {
+        fetch('http://18.223.21.3:8080/prizes/' + id, {
             method: 'GET',
             headers: {
                 'Authorization' : 'Bearer ' + localStorage.getItem('token')
